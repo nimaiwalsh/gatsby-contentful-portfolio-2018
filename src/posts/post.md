@@ -3,7 +3,7 @@ date: 2018-04-08
 title: 'My first blog post using Gatsby.js'
 ---
 
-## Heading 2
+## Header 2
 
 Laborum officia ullamco ut anim proident anim. Laborum officia qui
 esse nulla qui cupidatat proident irure. Ea laborum ullamco ea
