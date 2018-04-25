@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom';
 import Link from 'gatsby-link';
 import styled, { keyframes } from 'react-emotion';
 import Img from 'gatsby-image';
+import { Mobile, Default } from '../../utils/responsive-components';
 
+import BurgerMenu from '../BurgerMenu';
 import logo from '../../images/nimaiwalsh-logo-aqua-white.svg';
+
 //Overflow hidden is used to fit the image nicely in the header
 const HeaderWrapper = styled('div')`
   overflow: hidden;
@@ -20,7 +23,7 @@ const fadein = keyframes`
   100% {
     opacity: 1;
   }
-`
+`;
 const HeaderContent = styled('div')`
   display: flex;
   align-items: center;
@@ -53,6 +56,7 @@ const NavbarWrapper = styled('div')`
   position: fixed;
   width: 100%;
   z-index: 2;
+  height: 129px;
 `;
 
 const NavbarContainer = styled('div')`
@@ -79,7 +83,7 @@ const MainNav = styled('nav')`
       color: #fff;
       text-decoration: none;
       &:hover {
-        border-bottom: 4px solid #94E0D1;
+        border-bottom: 4px solid #94e0d1;
       }
     }
     li {
@@ -88,8 +92,7 @@ const MainNav = styled('nav')`
       margin: 0;
     }
   }
-
-`
+`;
 
 const headerImage = {
   position: 'absolute',
@@ -97,62 +100,68 @@ const headerImage = {
   left: 0,
   width: '100%',
   height: '100%',
-  opacity: 0.6
+  opacity: 0.6,
 };
 
 export default class Header extends Component {
-  componentDidUpdate(prevProps, prevState) {
-    const { location } = this.props;
-    //Do not animate if you are already on the same page
-    if (location.pathname !== prevProps.location.pathname) {
-      //If it is not the homepage, animate the header by making it smaller
-      if (this.props.location.pathname === '/') {
-        this.wrapper.animate([{ height: '20vh' }, { height: '100vh' }], {
-          duration: 500,
-          fill: 'forwards',
-          easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
-          iterations: 1,
-        });
-      } else {
-        this.wrapper.animate([{ height: '100vh' }, { height: '20vh' }], {
-          duration: 500,
-          fill: 'forwards',
-          easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
-          iterations: 1,
-        });
-      }
-    }
+  constructor(props) {
+    super(props);
+
+    this.state = { menuopen: false };
   }
+
+  animateMenu = () => {
+    let direction = '';
+    this.state.menuopen ? direction = 'normal' : direction = 'reverse';
+
+    this.navWrapper.animate([{ height: '129px' }, { height: '100vh' }], {
+      duration: 500,
+      fill: 'forwards',
+      easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
+      iterations: 1,
+      direction: `${direction}`,
+    })
+  };
+
+  handleMenuClick = () => {
+    this.setState({ menuopen: !this.state.menuopen }, this.animateMenu)
+  };
 
   render() {
     const { data, location } = this.props;
     return (
       //ref prop - Attach the reference of the HeaderWrapper element in the DOM to this.wrapper
-      <HeaderWrapper
-        isHome={location.pathname === '/'}
-        ref={wrapper => (this.wrapper = ReactDOM.findDOMNode(wrapper))}
-      >
-        <NavbarWrapper>
+      <HeaderWrapper isHome={location.pathname === '/'}>
+        <NavbarWrapper
+          ref={navWrapper =>
+            (this.navWrapper = ReactDOM.findDOMNode(navWrapper))
+          }
+        >
           <NavbarContainer>
             <Link to="/">
               <img src={logo} alt="Nimai Walsh Logo" />
             </Link>
-            <MainNav>
-              <ul>
-                <li>
-                  <Link to="/work">Work</Link>
-                </li>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
-                <li>
-                  <Link to="/journal">Journal</Link>
-                </li>
-                <li>
-                  <Link to="/contact">Contact</Link>
-                </li>
-              </ul>
-            </MainNav>
+            <Default>
+              <MainNav>
+                <ul>
+                  <li>
+                    <Link to="/work">Work</Link>
+                  </li>
+                  <li>
+                    <Link to="/about">About</Link>
+                  </li>
+                  <li>
+                    <Link to="/journal">Journal</Link>
+                  </li>
+                  <li>
+                    <Link to="/contact">Contact</Link>
+                  </li>
+                </ul>
+              </MainNav>
+            </Default>
+            <Mobile>
+              <BurgerMenu onClick={this.handleMenuClick} />
+            </Mobile>
           </NavbarContainer>
         </NavbarWrapper>
         <HeaderContent>
