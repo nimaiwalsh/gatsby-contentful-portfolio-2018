@@ -6,9 +6,16 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',
-    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-netlify-cms',
+    'gatsby-transformer-sharp',
+    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: 'oqzlzf0m004q',
+        accessToken: '0dab9fa4218fba4a3e2008d72b94d9f1478e90c447360ae27103171ef3088a6a',
+      },
+    },
     {
       resolve: 'gatsby-plugin-typography',
       options: {
@@ -34,17 +41,6 @@ module.exports = {
       options: {
         name: 'img',
         path: `${__dirname}/static/assets`,
-      },
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        //Place the end tag in markdown file to create excerpt
-        excerpt_separator: `<!-- end -->`,
-        plugins: [
-          //Used for code blocks
-          'gatsby-remark-prismjs',
-        ],
       },
     },
   ],

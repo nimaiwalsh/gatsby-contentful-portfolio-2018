@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => (
 export default IndexPage;
 
 export const query = graphql`
-  query NewQuery {
+  query SiteMeta {
     site {
       siteMetadata {
         desc

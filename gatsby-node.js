@@ -1,54 +1,32 @@
 const path = require('path');
-const { createFilePath } = require('gatsby-source-filesystem');
 
-//Create a slug for each of our post pages
-//A slug is the relative path including the file name .eg /posts/post2.md
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators;
-  if (node.internal.type === 'MarkdownRemark') {
-    const slug = createFilePath({
-      node,
-      getNode,
-      //Directory of your posts
-      basePath: 'posts',
-    });
-    createNodeField({
-      node,
-      name: 'slug',
-      //the new path of your post
-      value: `/journal${slug}`
-    });
-  }
-};
-
-//Create a new page for each post
+//Create a new page for each post from Contentful
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allMarkdownRemark {
+        allContentfulBlogPost {
           edges {
             node {
-              fields {
-                slug
-              }
+              slug
             }
           }
         }
       }
     `).then(result => {
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      result.data.allContentfulBlogPost.edges.forEach(({ node }) => {
         createPage({
-          path: node.fields.slug,
-          //Component of thew new page
+          path: `/journal/${node.slug}`,
+          //Component (Template) for the new page
           component: path.resolve('./src/templates/PostPage.js'),
+          //Variables to pass to the template page query
           context: {
-            slug: node.fields.slug
-          }
-        })
-      })
+            slug: node.slug,
+          },
+        });
+      });
       resolve();
     });
   });
-}
+};
