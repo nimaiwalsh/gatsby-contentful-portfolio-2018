@@ -13,7 +13,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-prism',
+            resolve: 'gatsby-remark-prismjs',
           },
         ]
       }
