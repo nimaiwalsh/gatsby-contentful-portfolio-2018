@@ -2,21 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import Helmet from 'react-helmet';
-import Img from 'gatsby-image';
+import { CONTAINER } from '../utils/theme'; 
 //CSS Theme for PrismJS code blocks
 import '../utils/prismjs-theme/prism.css';
 // //Web Animations API Polyfill - makes web animations work across all browsers
-let animationpoly
+let animationpoly;
 if (typeof document !== 'undefined')
-animationpoly = require('web-animations-js');
+  animationpoly = require('web-animations-js');
 
 import Header from '../components/Header';
+import IndexPage from '../pages/index';
 
 const ContentWrapper = styled('section')`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: ${CONTAINER.WIDTH};
   padding: 1.5rem 1.0875rem 1.45rem;
 `;
+
 //location prop comes from gatsby's router
 const TemplateWrapper = ({ children, data, location }) => (
   <div>
@@ -36,7 +38,11 @@ const TemplateWrapper = ({ children, data, location }) => (
       ]}
     />
     <Header data={data} location={location} />
-    <ContentWrapper>{children()}</ContentWrapper>
+    {location.pathname === '/' ? (
+      <IndexPage data={data} />
+    ) : (
+      <ContentWrapper>{children()}</ContentWrapper>
+    )}
   </div>
 );
 
