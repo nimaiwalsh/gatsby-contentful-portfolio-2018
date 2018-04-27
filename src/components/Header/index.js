@@ -7,6 +7,7 @@ import { Mobile, Default } from '../../utils/responsive-components';
 import MainNav from '../Nav/MainNav';
 import BurgerMenu from '../Nav/BurgerMenu';
 import MobileNav from '../Nav/MobileNav';
+import { CONTAINER } from '../../utils/theme';
 import logo from '../../images/nimaiwalsh-logo-aqua-white.svg';
 
 const HeaderWrapper = styled('div')`
@@ -24,7 +25,7 @@ const NavbarWrapper = styled('div')`
 
 const NavbarContainer = styled('div')`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: ${CONTAINER.WIDTH};
   padding: 1rem 1.0875rem;
   position: relative;
   display: flex;

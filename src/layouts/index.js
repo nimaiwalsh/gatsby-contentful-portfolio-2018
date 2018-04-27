@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled, { injectGlobal } from 'react-emotion';
 import Helmet from 'react-helmet';
 import { CONTAINER } from '../utils/theme'; 
 //CSS Theme for PrismJS code blocks
@@ -19,6 +19,12 @@ const ContentWrapper = styled('section')`
   padding: 1.5rem 1.0875rem 1.45rem;
 `;
 
+//Global styles for site
+injectGlobal`
+  background-color: #F3F3F3;
+`
+
+//Wrapper template to wrap all pages
 //location prop comes from gatsby's router
 const TemplateWrapper = ({ children, data, location }) => (
   <div>
