@@ -16,5 +16,5 @@ export const BREAKPOINTS = {
   TABLETMIN: '768px',
   TABLETMAX: '991px',
   MOBILE: '767px',
-  DEFAULT: '767px',
+  DEFAULT: '768px',
 }

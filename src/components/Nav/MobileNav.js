@@ -3,28 +3,28 @@ import styled from 'react-emotion';
 import Link from 'gatsby-link';
 
 const Nav = styled('nav')`
-  ul {
-    margin: 0;
-    list-style: none;
-    a {
-      color: #fff;
-      text-decoration: none;
-      &:hover {
-        border-bottom: 4px solid #94e0d1;
-      }
-    }
-    li {
-      display: inline-block;
-      padding: 10px;
-      margin: 0;
-    }
-  }
-`;
+  width: 100%;
+  align-items: center;
+  display: ${props => props.display ? 'block' : 'none'};
 
-const MainNav = () => {
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  li {
+    text-align: center;
+  }
+
+  a {
+    color: #FFF;
+  } 
+`
+
+const MobileNav = ({display, menuClick} ) => {
   return (
-    <Nav>
-      <ul>
+    <Nav display={display}>
+      <ul onClick={() => menuClick()}>
         <li>
           <Link to="/work">Work</Link>
         </li>
@@ -42,4 +42,4 @@ const MainNav = () => {
   );
 };
 
-export default MainNav;
+export default MobileNav;

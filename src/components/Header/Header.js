@@ -1,51 +1,22 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Link from 'gatsby-link';
-import styled, { keyframes } from 'react-emotion';
 import { Mobile, Default } from '../../utils/responsive-components';
+import { HeaderWrapper, NavbarWrapper, NavbarContainer } from './Header_styles';
 
-import MainNav from '../Nav/MainNav';
-import BurgerMenu from '../Nav/BurgerMenu';
-import MobileNav from '../Nav/MobileNav';
-import { CONTAINER } from '../../utils/theme';
+import MainNav from '../Nav/MainNav.js';
+import BurgerMenu from '../Nav/BurgerMenu.js';
+import MobileNav from '../Nav/MobileNav.js';
 import logo from '../../images/nimaiwalsh-logo-aqua-white.svg';
-
-const HeaderWrapper = styled('div')`
-  position: relative;
-  height: 129px;
-`;
-
-const NavbarWrapper = styled('div')`
-  // rgba(37, 75, 128, 0.8)
-  background-color: #254b80;
-  position: fixed;
-  width: 100%;
-  z-index: 2;
-`;
-
-const NavbarContainer = styled('div')`
-  margin: 0 auto;
-  max-width: ${CONTAINER.WIDTH};
-  padding: 1rem 1.0875rem;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
-
-  img {
-    height: 80px;
-    margin: 0;
-  }
-`;
 
 export default class Header extends Component {
   constructor(props) {
     super(props);
 
     this.state = { menuopen: false };
-  }
+  };
 
+  //Animate the nav menu when in mobile view
   animateMenu = () => {
     let direction = '';
     this.state.menuopen ? (direction = 'normal') : (direction = 'reverse');
@@ -59,19 +30,15 @@ export default class Header extends Component {
     });
   };
 
-  handleMenuClick = () => {
+  //Trigger open menu and animation
+  handleMenuClick = (e) => {
     this.setState({ menuopen: !this.state.menuopen }, this.animateMenu);
   };
 
   render() {
-    const { data, location } = this.props;
     return (
       <HeaderWrapper>
-        <NavbarWrapper
-          ref={navWrapper =>
-            (this.navWrapper = ReactDOM.findDOMNode(navWrapper))
-          }
-        >
+        <NavbarWrapper ref={navWrapper => (this.navWrapper = ReactDOM.findDOMNode(navWrapper))}>
           <NavbarContainer>
             <Link to="/">
               <img src={logo} alt="Nimai Walsh Logo" />
@@ -80,9 +47,12 @@ export default class Header extends Component {
               <MainNav />
             </Default>
             <Mobile>
-              <BurgerMenu onClick={this.handleMenuClick} />
+              <BurgerMenu onClick={this.handleMenuClick} open={this.state.menuopen} />
             </Mobile>
           </NavbarContainer>
+          <Mobile>
+            <MobileNav display={this.state.menuopen} menuClick={this.handleMenuClick}/>
+          </Mobile>
         </NavbarWrapper>
       </HeaderWrapper>
     );

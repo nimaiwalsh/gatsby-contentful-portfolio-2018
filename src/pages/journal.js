@@ -16,7 +16,7 @@ export default Journal;
 
 export const query = graphql`
   query PostList {
-    allContentfulBlogPost {
+    allContentfulBlogPost(sort: {fields: [createdAt], order: DESC},) {
       totalCount
       edges {
         node {

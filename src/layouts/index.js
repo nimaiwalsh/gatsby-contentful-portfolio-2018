@@ -10,7 +10,7 @@ let animationpoly;
 if (typeof document !== 'undefined')
   animationpoly = require('web-animations-js');
 
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 import IndexPage from '../pages/index';
 
 const ContentWrapper = styled('section')`
