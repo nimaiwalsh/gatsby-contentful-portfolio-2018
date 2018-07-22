@@ -1,17 +1,45 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ProjectListing from '../components/Projects/ProjectListing';
 
-export default class Work extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Work</h1>
-        <p>
-          Eiusmod consectetur ex amet voluptate pariatur irure velit enim
-          incididunt minim qui. In eiusmod aute aute sint amet. Ipsum quis est
-          ad do. Amet amet irure deserunt proident nisi voluptate laborum.
-          Pariatur id commodo duis Lorem Lorem quis eiusmod dolore nulla ad est.
-        </p>
-      </div>
-    );
+const Work = ({ data }) => {
+  return (
+    <div>
+      <h1>Work</h1>
+      {data.allContentfulWork.edges.map(({ node }) => {
+        return <ProjectListing project={node} key={node.id} />;
+      })}
+    </div>
+  );
+};
+
+export default Work;
+
+export const query = graphql`
+  query queryWorkList {
+    allContentfulWork {
+      edges {
+        node {
+          id
+          title
+          description {
+            description
+          }
+          builtWith
+          type
+          linkToWork
+          featureImage {
+            sizes {
+              base64
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
+            }
+          }
+        }
+      }
+    }
   }
-}
+`;

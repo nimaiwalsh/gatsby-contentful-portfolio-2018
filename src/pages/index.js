@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import { CONTAINER, PADDINGS, BREAKPOINTS } from '../utils/theme';
 
 const HeroSection = styled('section')`
-  //Overflow hidden is used to fit the image nicely in the header
+  /*Overflow hidden is used to fit the image nicely in the header*/
   position: relative;
   overflow: hidden;
   height: 60vh;
