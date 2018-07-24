@@ -1,5 +1,14 @@
 export const CONTAINER = {
   WIDTH: '1170px', 
+  PADDING: '2rem 1rem',
+}
+
+export const COLOURS = {
+  primary: '#2D4B7C',
+  secondary: '#94E0D1',
+
+  white: '#FFF',
+  whiteRGB: '255, 255, 255'
 }
 
 export const PADDINGS = {
@@ -12,7 +21,7 @@ export const PADDINGS = {
 };
 
 export const BREAKPOINTS = {
-  DESKTOP: '992',
+  DESKTOP: '992px',
   TABLETMIN: '768px',
   TABLETMAX: '991px',
   MOBILE: '767px',

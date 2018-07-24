@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { injectGlobal } from 'react-emotion';
 import Helmet from 'react-helmet';
+import globalStyles from '../utils/globalstyles';
 import { CONTAINER } from '../utils/theme'; 
 //CSS Theme for PrismJS code blocks
 import '../utils/prismjs-theme/prism.css';
@@ -12,17 +13,13 @@ if (typeof document !== 'undefined')
 
 import Header from '../components/Header/Header';
 import IndexPage from '../pages/index';
+import Footer from '../components/Footer/Footer';
 
 const ContentWrapper = styled('section')`
   margin: 0 auto;
   max-width: ${CONTAINER.WIDTH};
   padding: 1.5rem 1.0875rem 1.45rem;
 `;
-
-//Global styles for site
-injectGlobal`
-  background-color: #F3F3F3;
-`
 
 //Wrapper template to wrap all pages
 //location prop comes from gatsby's router
@@ -49,6 +46,7 @@ const TemplateWrapper = ({ children, data, location }) => (
     ) : (
       <ContentWrapper>{children()}</ContentWrapper>
     )}
+    <Footer />
   </div>
 );
 

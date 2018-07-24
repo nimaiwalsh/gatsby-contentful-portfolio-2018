@@ -1,27 +1,34 @@
 import React from 'react';
 import styled from 'react-emotion';
 import Link from 'gatsby-link';
+import { COLOURS } from '../../utils/theme';
 
 const Nav = styled('nav')`
   ul {
     margin: 0;
     list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8rem;
     a {
       color: #fff;
       text-decoration: none;
       &:hover {
-        border-bottom: 4px solid #94e0d1;
+        border-bottom: 4px solid ${COLOURS.secondary};
       }
     }
     li {
       display: inline-block;
-      padding: 10px;
+      &:not(:last-child) {
+        padding: 0 0.5rem;
+      }
       margin: 0;
     }
   }
 `;
 
-const MainNav = (props) => {
+const MainNav = props => {
   return (
     <Nav>
       <ul>

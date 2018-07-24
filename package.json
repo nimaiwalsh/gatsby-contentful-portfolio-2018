@@ -23,7 +23,9 @@
     "react-helmet": "^5.2.0",
     "react-responsive": "^4.1.0",
     "redux-thunk": "^2.2.0",
+    "typography": "^0.16.17",
     "typography-theme-stardust": "^0.16.14",
+    "typography-theme-sutro": "^0.15.10",
     "web-animations-js": "^2.3.1"
   },
   "keywords": [

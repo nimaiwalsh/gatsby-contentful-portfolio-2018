@@ -4,9 +4,9 @@ import Link from 'gatsby-link';
 import { Mobile, Default } from '../../utils/responsive-components';
 import { HeaderWrapper, NavbarWrapper, NavbarContainer } from './Header_styles';
 
-import MainNav from '../Nav/MainNav.js';
-import BurgerMenu from '../Nav/BurgerMenu.js';
-import MobileNav from '../Nav/MobileNav.js';
+import MainNav from '../Nav/MainNav';
+import BurgerMenu from '../Nav/BurgerMenu';
+import MobileNav from '../Nav/MobileNav';
 import logo from '../../images/nimaiwalsh-logo-aqua-white.svg';
 
 export default class Header extends Component {
@@ -21,7 +21,7 @@ export default class Header extends Component {
     let direction = '';
     this.state.menuopen ? (direction = 'normal') : (direction = 'reverse');
 
-    this.navWrapper.animate([{ height: '129px' }, { height: '100vh' }], {
+    this.navWrapper.animate([{ height: '109px' }, { height: '100vh' }], {
       duration: 500,
       fill: 'forwards',
       easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
@@ -41,7 +41,7 @@ export default class Header extends Component {
         <NavbarWrapper ref={navWrapper => (this.navWrapper = ReactDOM.findDOMNode(navWrapper))}>
           <NavbarContainer>
             <Link to="/">
-              <img src={logo} alt="Nimai Walsh Logo" />
+              <img className="logo" src={logo} alt="Nimai Walsh Logo" />
             </Link>
             <Default>
               <MainNav />
