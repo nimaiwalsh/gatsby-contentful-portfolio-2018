@@ -1,14 +1,17 @@
 import React from 'react';
-import ProjectListing from '../components/Projects/ProjectListing';
+import ProjectListing from '../components/ProjectListing/ProjectListing';
+import FadeInUp from '../components/FadeInUp';
 
 const Work = ({ data }) => {
   return (
-    <div>
-      <h1>Work</h1>
-      {data.contentfulLayout.contentModules.map(content => {
-        return <ProjectListing project={content} key={content.title} />;
-      })}
-    </div>
+    <FadeInUp>
+      <div>
+        <h1>Work</h1>
+        {data.contentfulLayout.contentModules.map(content => {
+          return <ProjectListing project={content} key={content.title} />;
+        })}
+      </div>
+    </FadeInUp>
   );
 };
 
@@ -41,4 +44,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

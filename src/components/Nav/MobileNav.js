@@ -32,7 +32,7 @@ const MobileNav = ({display, menuClick} ) => {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/journal">Journal</Link>
+          <Link to="/blog">Blog</Link>
         </li>
         <li>
           <Link to="/contact">Contact</Link>

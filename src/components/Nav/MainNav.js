@@ -14,7 +14,7 @@ const Nav = styled('nav')`
     a {
       color: #fff;
       text-decoration: none;
-      &:hover {
+      &:hover, &:focus {
         border-bottom: 4px solid ${COLOURS.secondary};
       }
     }
@@ -39,7 +39,7 @@ const MainNav = props => {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/journal">Journal</Link>
+          <Link to="/blog">Blog</Link>
         </li>
         <li>
           <Link to="/contact">Contact</Link>

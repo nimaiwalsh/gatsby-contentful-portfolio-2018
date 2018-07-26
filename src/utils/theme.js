@@ -4,8 +4,10 @@ export const CONTAINER = {
 }
 
 export const COLOURS = {
-  primary: '#2D4B7C',
-  secondary: '#94E0D1',
+  primary: '#4ABDAC',
+  secondary: '#FC4A1A',
+  secondarHighligh: '#F7B733',
+  grey: '#DFDCE3',
 
   white: '#FFF',
   whiteRGB: '255, 255, 255'

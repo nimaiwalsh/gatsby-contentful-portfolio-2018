@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Link from 'gatsby-link';
 import { Mobile, Default } from '../../utils/responsive-components';
-import { HeaderWrapper, NavbarWrapper, NavbarContainer } from './Header_styles';
+import { HeaderWrapper, NavbarWrapper, NavbarContainer } from './Header.styles';
 
 import MainNav from '../Nav/MainNav';
 import BurgerMenu from '../Nav/BurgerMenu';
 import MobileNav from '../Nav/MobileNav';
-import logo from '../../images/nimaiwalsh-logo-aqua-white.svg';
+import logo from '../../images/nimaiwalsh-logo.svg';
 
 export default class Header extends Component {
   constructor(props) {
@@ -40,7 +40,7 @@ export default class Header extends Component {
       <HeaderWrapper>
         <NavbarWrapper ref={navWrapper => (this.navWrapper = ReactDOM.findDOMNode(navWrapper))}>
           <NavbarContainer>
-            <Link to="/">
+            <Link to="/" className="logo-link">
               <img className="logo" src={logo} alt="Nimai Walsh Logo" />
             </Link>
             <Default>

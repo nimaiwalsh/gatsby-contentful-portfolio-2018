@@ -1,8 +1,14 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled, { keyframes } from 'react-emotion';
+import FadeInUp from '../components/FadeInUp';
+import {
+  HeroSection,
+  HeaderContent,
+  SectionWrapper,
+  Box,
+} from './index.styles';
 import Img from 'gatsby-image';
-import { HeroSection, HeaderContent, SectionWrapper, Box} from './index.styles'
 
 const headerImage = {
   position: 'absolute',
@@ -23,12 +29,14 @@ const IndexPage = ({ data }) => (
       </HeaderContent>
       <Img style={headerImage} sizes={data.headerImage.sizes} />
     </HeroSection>
-    <SectionWrapper>
-      <Box className="work">Work</Box>
-      <Box className="journal">Journal</Box>
-      <Box className="contact">Contact</Box>
-      <Box className="about">About</Box>
-    </SectionWrapper>
+    <FadeInUp>
+      <SectionWrapper>
+        <Box className="work">Work</Box>
+        <Box className="journal">Journal</Box>
+        <Box className="contact">Contact</Box>
+        <Box className="about">About</Box>
+      </SectionWrapper>
+    </FadeInUp>
   </div>
 );
 

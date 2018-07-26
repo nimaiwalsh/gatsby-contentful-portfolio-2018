@@ -15,14 +15,15 @@ module.exports = {
           {
             resolve: 'gatsby-remark-prismjs',
           },
-        ]
-      }
+        ],
+      },
     },
     {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: 'oqzlzf0m004q',
-        accessToken: '0dab9fa4218fba4a3e2008d72b94d9f1478e90c447360ae27103171ef3088a6a',
+        accessToken:
+          '0dab9fa4218fba4a3e2008d72b94d9f1478e90c447360ae27103171ef3088a6a',
       },
     },
     {
@@ -43,6 +44,12 @@ module.exports = {
       options: {
         name: 'img',
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts all options defined by `babel-plugin-emotion` plugin.
       },
     },
   ],

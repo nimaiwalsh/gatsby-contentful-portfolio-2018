@@ -24,9 +24,7 @@ sutroTheme.googleFonts = [
 ];
 
 sutroTheme.overrideThemeStyles = (options) => ({
-  'a': {
-    color: `${COLOURS.secondary}`
-  }
+  //styles in here
 });
 
 // const typography = new Typography({ baseFontSize: "20px" });

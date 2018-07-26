@@ -13,13 +13,17 @@ const Footer = () => {
             &nbsp;/&nbsp;
             <Link to="/work">Work</Link>
             &nbsp;/&nbsp;
-            <Link to="/journal">Journal</Link>
+            <Link to="/blog">Blog</Link>
             &nbsp;/&nbsp;
             <Link to="/contact">Contact</Link>
           </p>
         </div>
         <div className="contributions">
-          <p>Site built with <span className="heart">&hearts;</span> by Nimai with Gatsby and Contentful</p>
+          <p>
+            Site built with <span className="heart">&hearts;</span> by Nimai
+            with <a className="secondary" href="https://www.gatsbyjs.org/plugins/?=bread" target="_blank">Gatsby</a>{' '}
+            and <a className="secondary" href="https://www.contentful.com/" target="_blank">Contentful</a>
+          </p>
         </div>
       </div>
     </footer>

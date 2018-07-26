@@ -1,18 +1,21 @@
 import React from 'react';
-import PostListing from '../components/Posts/PostListing';
+import PostListing from '../components/PostListing/PostListing';
+import FadeInUp from '../components/FadeInUp';
 
-const Journal = ({ data }) => {
+const Blog = ({ data }) => {
   return (
-    <div>
-      <h1>My Journal</h1>
-      {data.allContentfulBlogPost.edges.map(({ node }) => (
-        <PostListing post={node} key={node.id} />
-      ))}
-    </div>
+    <FadeInUp>
+      <div>
+        <h1>Blog</h1>
+        {data.allContentfulBlogPost.edges.map(({ node }) => (
+          <PostListing post={node} key={node.id} />
+        ))}
+      </div>
+    </FadeInUp>
   );
 };
 
-export default Journal;
+export default Blog;
 
 export const query = graphql`
   query PostList {
