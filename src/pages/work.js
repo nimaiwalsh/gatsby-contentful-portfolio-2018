@@ -5,12 +5,12 @@ import FadeInUp from '../components/FadeInUp';
 const Work = ({ data }) => {
   return (
     <FadeInUp>
-      <div>
+      <section>
         <h1>Work</h1>
         {data.contentfulLayout.contentModules.map(content => {
           return <ProjectListing project={content} key={content.title} />;
         })}
-      </div>
+      </section>
     </FadeInUp>
   );
 };

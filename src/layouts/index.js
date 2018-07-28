@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { ContentWrapper } from './index.styles';
+import { LayoutWrapper, ContentWrapper } from './index.styles';
 import Header from '../components/Header/Header';
-import IndexPage from '../pages';
 import Footer from '../components/Footer/Footer';
 
 import globalStyles from '../utils/globalstyles';
@@ -17,7 +16,7 @@ if (typeof document !== 'undefined')
 //Wrapper template to wrap all pages
 //location prop comes from gatsby's router
 const TemplateWrapper = ({ children, data, location }) => (
-  <div>
+  <LayoutWrapper>
     <Helmet
       title="Nimai Walsh - Web Developer"
       meta={[
@@ -34,13 +33,11 @@ const TemplateWrapper = ({ children, data, location }) => (
       ]}
     />
     <Header data={data} location={location} />
-    {location.pathname === '/' ? (
-      <IndexPage data={data} />
-    ) : (
-      <ContentWrapper>{children()}</ContentWrapper>
-    )}
+    <ContentWrapper>
+      {children()}
+    </ContentWrapper>
     <Footer />
-  </div>
+  </LayoutWrapper>
 );
 
 TemplateWrapper.propTypes = {
@@ -55,11 +52,6 @@ export const query = graphql`
       siteMetadata {
         title
         desc
-      }
-    }
-    headerImage: imageSharp(id: { regex: "/bg.jpeg/" }) {
-      sizes(maxWidth: 1240) {
-        ...GatsbyImageSharpSizes
       }
     }
   }

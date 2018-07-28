@@ -1,12 +1,13 @@
 export const CONTAINER = {
   WIDTH: '1170px', 
-  PADDING: '2rem 1rem',
+  PADDING: '1rem',
 }
 
 export const COLOURS = {
   primary: '#4ABDAC',
+  primaryRGB: '74, 189, 172',
   secondary: '#FC4A1A',
-  secondarHighligh: '#F7B733',
+  secondaryHighlight: '#F7B733',
   grey: '#DFDCE3',
 
   white: '#FFF',

@@ -5,7 +5,7 @@ export default class Contact extends Component {
   render() {
     return (
       <FadeInUp>
-        <div>
+        <section>
           <h1>Contact me</h1>
           <p>
             Laborum officia ullamco ut anim proident anim. Laborum officia qui
@@ -15,7 +15,7 @@ export default class Contact extends Component {
             excepteur minim cupidatat quis. Consectetur aliqua esse velit ipsum
             nisi voluptate qui dolore in.
           </p>
-        </div>
+        </section>
       </FadeInUp>
     );
   }

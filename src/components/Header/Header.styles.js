@@ -3,7 +3,7 @@ import { CONTAINER, COLOURS } from '../../utils/theme';
 
 export const HeaderWrapper = styled('div')`
   position: relative;
-  height: 4.45rem;
+  height: 3.6rem;
 `;
 
 export const NavbarWrapper = styled('div')`
@@ -12,14 +12,14 @@ export const NavbarWrapper = styled('div')`
   width: 100%;
   z-index: 2;
   overflow: hidden;
-  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.7);
+  box-shadow: 2px 2px 4px 2px rgba(0,0,0,.2);
 `;
 
 export const NavbarContainer = styled('div')`
   margin: 0 auto;
   max-width: ${CONTAINER.WIDTH};
   padding: 1rem;
-  height: 4.45rem;
+  height: 3.6rem;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -33,9 +33,4 @@ export const NavbarContainer = styled('div')`
     height: 3rem;
     margin: 0;
   }
-
-  /* & svg {
-    .st1{fill:#E44B03;}
-    .st2{fill:#7BE2D0;}
-  } */
 `;

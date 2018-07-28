@@ -1,9 +1,14 @@
 import styled from 'react-emotion';
 import { CONTAINER } from '../utils/theme'; 
 
-export const ContentWrapper = styled('section')`
+export const LayoutWrapper = styled('div')`
+  position: relative;
+`
+
+export const ContentWrapper = styled('main')`
   margin: 0 auto;
+  height: 100%;
+  min-height: 50rem;
   max-width: ${CONTAINER.WIDTH};
-  min-height: 30rem;
-  padding: 1.5rem 1.0875rem 1.45rem;
+  padding: 0 1rem;
 `;

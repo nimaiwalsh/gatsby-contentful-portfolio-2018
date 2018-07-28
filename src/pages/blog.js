@@ -5,12 +5,12 @@ import FadeInUp from '../components/FadeInUp';
 const Blog = ({ data }) => {
   return (
     <FadeInUp>
-      <div>
+      <section>
         <h1>Blog</h1>
         {data.allContentfulBlogPost.edges.map(({ node }) => (
           <PostListing post={node} key={node.id} />
         ))}
-      </div>
+      </section>
     </FadeInUp>
   );
 };

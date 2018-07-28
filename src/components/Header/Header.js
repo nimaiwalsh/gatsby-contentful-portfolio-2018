@@ -21,7 +21,7 @@ export default class Header extends Component {
     let direction = '';
     this.state.menuopen ? (direction = 'normal') : (direction = 'reverse');
 
-    this.navWrapper.animate([{ height: '109px' }, { height: '100vh' }], {
+    this.navWrapper.animate([{ height: '3.6rem' }, { height: '100vh' }], {
       duration: 500,
       fill: 'forwards',
       easing: 'cubic-bezier(0.86, 0, 0.07, 1)',

@@ -11,6 +11,9 @@ const globalStyles = injectGlobal`
   a:hover {
     text-decoration: none;
   }
+  ul, ol {
+    margin-left: 1.78rem;
+  }
 `
 
 export default globalStyles
