@@ -8,7 +8,7 @@ import {
   HeaderContent,
   SectionWrapper,
   Box,
-} from './index.styles';
+} from '../pages-styles/index.styles';
 import Img from 'gatsby-image';
 
 const IndexPage = ({ data }) => (
