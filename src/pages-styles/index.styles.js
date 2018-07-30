@@ -2,7 +2,7 @@ import styled, { keyframes } from 'react-emotion';
 import { CONTAINER, PADDINGS, BREAKPOINTS, COLOURS } from '../utils/theme';
 
 export const HeroSection = styled('section')`
-  /*This section makes image full width while a children of fixed width container*/
+  /*This section makes image full width while a child of fixed width container*/
   width: 100vw;
   position: relative;
   left: 50%;

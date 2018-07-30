@@ -8,10 +8,13 @@ export const COLOURS = {
   primaryRGB: '74, 189, 172',
   secondary: '#FC4A1A',
   secondaryHighlight: '#F7B733',
+  
   grey: '#DFDCE3',
 
   white: '#FFF',
-  whiteRGB: '255, 255, 255'
+  whiteRGB: '255, 255, 255',
+  black: '#090909',
+  blackRGB: '0, 0, 0'
 }
 
 export const PADDINGS = {
