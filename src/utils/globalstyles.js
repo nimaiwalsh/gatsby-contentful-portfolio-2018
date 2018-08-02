@@ -4,6 +4,7 @@ import { COLOURS } from '../utils/theme';
 const globalStyles = injectGlobal`
   body {
     background-color: #F3F3F3;
+    box-sizing: border-box;
   }
   a {
     color: ${COLOURS.secondary};

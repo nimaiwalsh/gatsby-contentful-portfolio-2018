@@ -1,24 +1,27 @@
 import React from 'react';
 import Img from 'gatsby-image';
+import ProjectContainer from './ProjectListing-styles';
 
 const ProjectListing = ({ project }) => {
   return (
-    <div className="work-box">
-      <div className="feature">
-        <Img sizes={project.featureImage.sizes} />
-        <a href={project.linkToWork} target="_blank">
-          <h3>{project.title}</h3>
+    <ProjectContainer>
+      <div className="project">
+        <div className="project-image">
+          <Img sizes={project.featureImage.sizes} />
+        </div>
+        <a className="project-title" href={project.linkToWork} target="_blank">
+          <h3><span>{project.title}</span></h3>
         </a>
       </div>
-      <div className="description">
-        <h4>{project.type}</h4>
-        <p>{project.description.description}</p>
+      <div className="project-description">
+        <h4 className="project-description-type">{project.type}</h4>
+        <p className="project-description-desc">{project.description.description}</p>
         <div>
-          <div>Built with</div>
+          <h5>Built with</h5>
           <ul>{project.builtWith.map(item => <li key={item}>{item}</li>)}</ul>
         </div>
       </div>
-    </div>
+    </ProjectContainer>
   );
 };
 
