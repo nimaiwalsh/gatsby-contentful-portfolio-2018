@@ -21,7 +21,7 @@ const Nav = styled('nav')`
     li {
       display: inline-block;
       &:not(:last-child) {
-        padding: 0 0.5rem;
+        padding-right: .5rem;
       }
       margin: 0;
     }
