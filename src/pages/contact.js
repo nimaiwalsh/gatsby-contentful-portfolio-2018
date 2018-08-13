@@ -60,6 +60,7 @@ export default class Contact extends Component {
               method="post"
               action="/contact-form-success/"
               data-netlify="true"
+              data-netlify-honeypot="bot-field"
               data-netlify-recaptcha="true"
               onSubmit={this.handleSubmit}
             >
