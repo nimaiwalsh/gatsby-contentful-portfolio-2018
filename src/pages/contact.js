@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import { navigateTo } from 'gatsby-link';
+import Recaptcha from 'react-google-recaptcha';
+
 import FadeInUp from '../components/FadeInUp';
 import FormContainer from '../pages-styles/contact.styles';
-import { navigateTo } from 'gatsby-link';
+
+const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
 
 /*Encode data into a useful URL*/
 function encode(data) {
@@ -22,6 +26,10 @@ export default class Contact extends Component {
     });
   };
 
+  handleRecaptcha = value => {
+    this.setState({ 'g-recaptcha-response': value });
+  };
+
   /*Netlify  parameters in here that are picked up by the bots for form submission*/
   handleSubmit = e => {
     e.preventDefault();
@@ -38,6 +46,8 @@ export default class Contact extends Component {
       .catch(err => alert(error));
   };
 
+  // data-netlify-honeypot="bot-field"
+
   render() {
     const { name, email, message } = this.state;
     return (
@@ -50,7 +60,7 @@ export default class Contact extends Component {
               method="post"
               action="/contact-form-success/"
               data-netlify="true"
-              data-netlify-honeypot="bot-field"
+              data-netlify-recaptcha="true"
               onSubmit={this.handleSubmit}
             >
               {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
@@ -85,6 +95,11 @@ export default class Contact extends Component {
                 value={message}
                 onChange={this.handleChange}
                 className="input-message"
+              />
+              <Recaptcha
+                ref="recaptcha"
+                sitekey={RECAPTCHA_KEY}
+                onChange={this.handleRecaptcha}
               />
               <button type="submit" className="button-submit">
                 Submit

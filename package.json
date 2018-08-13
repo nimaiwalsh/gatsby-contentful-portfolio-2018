@@ -20,6 +20,7 @@
     "gatsby-transformer-remark": "^1.7.40",
     "gatsby-transformer-sharp": "^1.6.22",
     "react-emotion": "^9.1.0",
+    "react-google-recaptcha": "^0.14.0",
     "react-helmet": "^5.2.0",
     "react-motion": "^0.5.2",
     "react-responsive": "^4.1.0",
@@ -33,7 +34,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "echo SITE_RECAPTCHA_KEY=$SITE_RECAPTCHA_KEY >> env.production && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"

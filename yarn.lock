@@ -8170,7 +8170,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@>=15.5.0, prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -8342,6 +8342,12 @@ react-aria-menubutton@^5.1.0:
     prop-types "^15.6.0"
     teeny-tap "^0.2.0"
 
+react-async-script@>=0.11.0:
+  version "0.11.1"
+  resolved "https://registry.npmjs.org/react-async-script/-/react-async-script-0.11.1.tgz#b75536c2ad2f7efafbaac39cfa2242a5f642fb0e"
+  dependencies:
+    prop-types ">=15.5.0"
+
 react-autosuggest@^9.3.2:
   version "9.3.4"
   resolved "https://registry.npmjs.org/react-autosuggest/-/react-autosuggest-9.3.4.tgz#e47ff800081b2f7c678165bfb7cc84b07f462336"
@@ -8443,6 +8449,13 @@ react-error-overlay@^3.0.0:
 react-frame-component@^2.0.0:
   version "2.0.2"
   resolved "https://registry.npmjs.org/react-frame-component/-/react-frame-component-2.0.2.tgz#e602a980e1d78f91f471531225b61cfdbf68e614"
+
+react-google-recaptcha@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.npmjs.org/react-google-recaptcha/-/react-google-recaptcha-0.14.0.tgz#faa315c837f287aab20cfaf3a1beaa5f8c6a49ee"
+  dependencies:
+    prop-types ">=15.5.0"
+    react-async-script ">=0.11.0"
 
 react-helmet@^5.2.0:
   version "5.2.0"
