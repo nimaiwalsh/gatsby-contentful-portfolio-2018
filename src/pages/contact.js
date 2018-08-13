@@ -5,7 +5,7 @@ import Recaptcha from 'react-google-recaptcha';
 import FadeInUp from '../components/FadeInUp';
 import FormContainer from '../pages-styles/contact.styles';
 
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
+const RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY;
 
 /*Encode data into a useful URL*/
 function encode(data) {
