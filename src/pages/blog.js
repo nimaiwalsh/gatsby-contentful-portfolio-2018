@@ -1,17 +1,22 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+
+import Layout from '../components/Layout';
 import PostListing from '../components/PostListing/PostListing';
 import FadeInUp from '../components/FadeInUp';
 
 const Blog = ({ data }) => {
   return (
-    <FadeInUp>
-      <section>
-        <h1>Blog</h1>
-        {data.allContentfulBlogPost.edges.map(({ node }) => (
-          <PostListing post={node} key={node.id} />
-        ))}
-      </section>
-    </FadeInUp>
+    <Layout>
+      <FadeInUp>
+        <section>
+          <h1>Blog</h1>
+          {data.allContentfulBlogPost.edges.map(({ node }) => (
+            <PostListing post={node} key={node.id} />
+          ))}
+        </section>
+      </FadeInUp>
+    </Layout>
   );
 };
 

@@ -21,8 +21,8 @@ const Footer = () => {
         <div className="contributions">
           <p>
             Site built with <span className="heart">&hearts;</span> by Nimai
-            with <a className="secondary" href="https://www.gatsbyjs.org/plugins/?=bread" target="_blank">Gatsby</a>{' '}
-            and <a className="secondary" href="https://www.contentful.com/" target="_blank">Contentful</a>
+            with <a className="secondary" href="https://www.gatsbyjs.org/plugins/?=bread" target="_blank" rel="noopener noreferrer">Gatsby</a>{' '}
+            and <a className="secondary" href="https://www.contentful.com/" target="_blank" rel="noopener noreferrer">Contentful</a>
           </p>
         </div>
       </div>

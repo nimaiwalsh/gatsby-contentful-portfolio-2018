@@ -1,8 +1,8 @@
 const path = require('path');
 
 //Create a new page for each post from Contentful
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
   return new Promise((resolve, reject) => {
     graphql(`
       {

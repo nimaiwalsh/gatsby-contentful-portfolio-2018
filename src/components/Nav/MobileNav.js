@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'react-emotion';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 
 const Nav = styled('nav')`
   width: 100%;
   align-items: center;
-  display: ${props => props.display ? 'block' : 'none'};
+  display: ${props => props.open ? 'block' : 'none'};
 
   ul {
     list-style: none;
@@ -21,9 +21,9 @@ const Nav = styled('nav')`
   } 
 `
 
-const MobileNav = ({display, menuClick} ) => {
+const MobileNav = ({open, menuClick} ) => {
   return (
-    <Nav display={display}>
+    <Nav open={open}>
       <ul onClick={() => menuClick()}>
         <li>
           <Link to="/work">Work</Link>
