@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { navigateTo } from 'gatsby-link';
+import { navigate } from 'gatsby';
 import Recaptcha from 'react-google-recaptcha';
 
+import Layout from '../components/Layout';
 import FadeInUp from '../components/FadeInUp';
 import FormContainer from '../pages-styles/contact.styles';
 
@@ -42,8 +43,8 @@ export default class Contact extends Component {
         ...this.state,
       }),
     })
-      .then(() => navigateTo(form.getAttribute('action')))
-      .catch(err => alert(error));
+      .then(() => navigate(form.getAttribute('action')))
+      .catch(err => alert(err))
   };
 
   // data-netlify-honeypot="bot-field"
@@ -51,64 +52,66 @@ export default class Contact extends Component {
   render() {
     const { name, email, message } = this.state;
     return (
-      <FadeInUp>
-        <section>
-          <h1>Contact me</h1>
-          <FormContainer>
-            <form
-              name="contact"
-              method="post"
-              action="/contact-form-success/"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              data-netlify-recaptcha="true"
-              onSubmit={this.handleSubmit}
-            >
-              {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-              <input type="hidden" name="form-name" value="contact" />
-              <label hidden>
-                Don’t fill this out:{' '}
-                <input name="bot-field" onChange={this.handleChange} />
-              </label>
+      <Layout>
+        <FadeInUp>
+          <section>
+            <h1>Contact me</h1>
+            <FormContainer>
+              <form
+                name="contact"
+                method="post"
+                action="/contact-form-success/"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                data-netlify-recaptcha="true"
+                onSubmit={this.handleSubmit}
+              >
+                {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                <input type="hidden" name="form-name" value="contact" />
+                <label hidden>
+                  Don’t fill this out:{' '}
+                  <input name="bot-field" onChange={this.handleChange} />
+                </label>
 
-              <label>Name (optional)</label>
-              <input
-                name="name"
-                type="text"
-                value={name}
-                onChange={this.handleChange}
-                className="input-name"
-              />
-              <label>Email</label>
-              <input
-                required
-                name="email"
-                type="email"
-                value={email}
-                onChange={this.handleChange}
-                className="input-email"
-              />
-              <label>Message</label>
-              <textarea
-                required
-                name="message"
-                type="text"
-                value={message}
-                onChange={this.handleChange}
-                className="input-message"
-              />
-              <Recaptcha
-                ref="recaptcha"
-                sitekey={RECAPTCHA_KEY}
-                onChange={this.handleRecaptcha}
-              />
-              <button type="submit" className="button-submit">
-                Submit
-              </button>
-            </form>
-          </FormContainer>
-        </section>
-      </FadeInUp>
+                <label>Name (optional)</label>
+                <input
+                  name="name"
+                  type="text"
+                  value={name}
+                  onChange={this.handleChange}
+                  className="input-name"
+                />
+                <label>Email</label>
+                <input
+                  required
+                  name="email"
+                  type="email"
+                  value={email}
+                  onChange={this.handleChange}
+                  className="input-email"
+                />
+                <label>Message</label>
+                <textarea
+                  required
+                  name="message"
+                  type="text"
+                  value={message}
+                  onChange={this.handleChange}
+                  className="input-message"
+                />
+                <Recaptcha
+                  ref="recaptcha"
+                  sitekey={RECAPTCHA_KEY}
+                  onChange={this.handleRecaptcha}
+                />
+                <button type="submit" className="button-submit">
+                  Submit
+                </button>
+              </form>
+            </FormContainer>
+          </section>
+        </FadeInUp>
+      </Layout>
     );
   }
 }

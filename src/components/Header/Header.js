@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
+
 import { Mobile, Default } from '../../utils/responsive-components';
 import { HeaderWrapper, NavbarWrapper, NavbarContainer } from './Header.styles';
-
 import MainNav from '../Nav/MainNav';
 import BurgerMenu from '../Nav/BurgerMenu';
 import MobileNav from '../Nav/MobileNav';
@@ -51,7 +51,7 @@ export default class Header extends Component {
             </Mobile>
           </NavbarContainer>
           <Mobile>
-            <MobileNav display={this.state.menuopen} menuClick={this.handleMenuClick}/>
+            <MobileNav open={this.state.menuopen} menuClick={this.handleMenuClick}/>
           </Mobile>
         </NavbarWrapper>
       </HeaderWrapper>

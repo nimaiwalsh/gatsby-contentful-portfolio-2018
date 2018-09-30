@@ -9,7 +9,7 @@ const ProjectListing = ({ project }) => {
         <div className="project-image">
           <Img sizes={project.featureImage.sizes} />
         </div>
-        <a className="project-title" href={project.linkToWork} target="_blank">
+        <a className="project-title" href={project.linkToWork} target="_blank" rel="noopener noreferrer">
           <h3><span>{project.title}</span></h3>
         </a>
       </div>

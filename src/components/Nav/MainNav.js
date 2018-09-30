@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import { COLOURS } from '../../utils/theme';
 
 const Nav = styled('nav')`
