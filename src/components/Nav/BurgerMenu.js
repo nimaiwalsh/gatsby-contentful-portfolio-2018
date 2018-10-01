@@ -1,5 +1,5 @@
-import React from 'react';
-import { css } from 'react-emotion';
+import React from 'react'
+import { css } from 'react-emotion'
 
 const container = css`
   cursor: pointer;
@@ -14,7 +14,7 @@ const container = css`
     border-radius: 3px;
     transition: 0.4s;
   }
-`;
+`
 
 //animation when clicked - turn menu into a cross
 const change = css`
@@ -29,7 +29,7 @@ const change = css`
   .bar3 {
     transform: rotate(45deg) translate(-8px, -8px);
   }
-`;
+`
 
 const BurgerMenu = ({ onClick, open }) => {
   return (
@@ -41,7 +41,7 @@ const BurgerMenu = ({ onClick, open }) => {
       <div className="bar2" />
       <div className="bar3" />
     </div>
-  );
-};
+  )
+}
 
-export default BurgerMenu;
+export default BurgerMenu

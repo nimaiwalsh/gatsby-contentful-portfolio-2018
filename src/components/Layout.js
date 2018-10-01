@@ -1,25 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
 
-import { LayoutWrapper, ContentWrapper } from './Layout.styles';
-import Header from './Header/Header';
-import Footer from './Footer/Footer';
+import { LayoutWrapper, ContentWrapper } from './Layout.styles'
+import Header from './Header/Header'
+import Footer from './Footer/Footer'
 
-import globalStyles from '../utils/globalstyles';
+import globalStyles from '../utils/globalstyles'
 //CSS Theme for PrismJS code blocks
-import '../utils/prismjs-theme/prism.css';
+import '../utils/prismjs-theme/prism.css'
 
 // //Web Animations API Polyfill - makes web animations work across all browsers
-let animationpoly;
+let animationpoly
 if (typeof document !== 'undefined')
-  animationpoly = require('web-animations-js');
+  animationpoly = require('web-animations-js')
 
 //Wrapper template to wrap all pages
 //location prop comes from gatsby's router
-const Layout = ({ children, data }) => (
-  <StaticQuery 
+const Layout = ({ children }) => (
+  <StaticQuery
     query={graphql`
       query SiteTitleQuery {
         site {
@@ -29,8 +29,7 @@ const Layout = ({ children, data }) => (
         }
       }
     `}
-
-    render={(data) => (
+    render={data => (
       <LayoutWrapper>
         <Helmet
           title="Nimai Walsh - Web Developer"
@@ -48,9 +47,7 @@ const Layout = ({ children, data }) => (
           ]}
         />
         <Header data={data} />
-        <ContentWrapper>
-          { children }
-        </ContentWrapper>
+        <ContentWrapper>{children}</ContentWrapper>
         <Footer />
       </LayoutWrapper>
     )}

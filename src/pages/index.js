@@ -1,24 +1,29 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from 'react'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import Layout from '../components/Layout';
-import FadeInUp from '../components/FadeInUp';
+import Layout from '../components/Layout'
+import FadeInUp from '../components/FadeInUp'
+import QuoteListing from '../components/QuoteListing'
+import { Row } from '../components/StyledComponents'
 import {
   HeroSection,
   BackgroundImage,
   HeaderContent,
   SectionWrapper,
   Box,
-} from '../pages-styles/index.styles';
+} from '../pages-styles/index.styles'
 
 const IndexPage = ({ data }) => (
   <Layout>
     <div>
       <HeroSection>
         <BackgroundImage>
-          <Img className='header-image' fluid={data.headerImage.childImageSharp.fluid} />
-          <div className='header-image-overlay' />
+          <Img
+            className="header-image"
+            fluid={data.headerImage.childImageSharp.fluid}
+          />
+          <div className="header-image-overlay" />
         </BackgroundImage>
         <HeaderContent>
           <div>
@@ -28,18 +33,23 @@ const IndexPage = ({ data }) => (
         </HeaderContent>
       </HeroSection>
       <FadeInUp>
+        <>
+        <Row>
+          <QuoteListing />
+        </Row>
         <SectionWrapper>
-            <Box className="work">Work</Box>
-            <Box className="journal">Journal</Box>
-            <Box className="contact">Contact</Box>
-            <Box className="about">About</Box>
+          <Box className="work">Work</Box>
+          <Box className="journal">Journal</Box>
+          <Box className="contact">Contact</Box>
+          <Box className="about">About</Box>
         </SectionWrapper>
+        </>
       </FadeInUp>
     </div>
   </Layout>
-);
+)
 
-export default IndexPage;
+export default IndexPage
 
 export const query = graphql`
   query IndexMeta {
@@ -49,12 +59,12 @@ export const query = graphql`
         desc
       }
     }
-    headerImage: 	file(relativePath:{regex: "/hero-image.jpg/" }) {
+    headerImage: file(relativePath: { regex: "/hero-image.jpg/" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
-	  }
+    }
   }
-`;
+`

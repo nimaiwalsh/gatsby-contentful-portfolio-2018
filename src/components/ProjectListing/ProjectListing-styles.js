@@ -1,5 +1,5 @@
-import styled from 'react-emotion';
-import { COLOURS } from '../../utils/theme';
+import styled from 'react-emotion'
+import { COLOURS } from '../../utils/theme'
 
 export const ProjectContainer = styled('div')`
   margin-bottom: 4rem;
@@ -21,14 +21,14 @@ export const ProjectContainer = styled('div')`
     margin-bottom: 2rem;
     margin-left: 1rem;
     /*like a border but can use offsets*/
-    outline: .5rem solid ${COLOURS.primary};
-    outline-offset: .5rem;
+    outline: 0.5rem solid ${COLOURS.primary};
+    outline-offset: 0.5rem;
   }
 
   .project-title {
     color: ${COLOURS.primary};
     span {
-     background-color: ${COLOURS.black};
+      background-color: ${COLOURS.black};
     }
   }
 
@@ -37,12 +37,10 @@ export const ProjectContainer = styled('div')`
   }
 
   .project-title {
-
   }
 
   .project-description {
-
   }
-`;
+`
 
-export default ProjectContainer;
+export default ProjectContainer

@@ -1,9 +1,9 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout';
-import FadeInUp from '../components/FadeInUp';
-import ProjectListing from '../components/ProjectListing/ProjectListing';
+import Layout from '../components/Layout'
+import FadeInUp from '../components/FadeInUp'
+import ProjectListing from '../components/ProjectListing/ProjectListing'
 
 const Work = ({ data }) => {
   return (
@@ -11,23 +11,23 @@ const Work = ({ data }) => {
       <FadeInUp>
         <section>
           <h1>Work</h1>
-          {data.contentfulLayout.contentModules.map(content => {
-            return <ProjectListing project={content} key={content.title} />;
+          {data.contentfulLayout.modules.map(content => {
+            return <ProjectListing project={content} key={content.title} />
           })}
         </section>
       </FadeInUp>
     </Layout>
-  );
-};
+  )
+}
 
-export default Work;
+export default Work
 
 /*Import all the work projects from the Work contentful layout*/
 export const query = graphql`
   query queryWorkList {
     contentfulLayout(title: { eq: "Work" }) {
       title
-      contentModules {
+      modules {
         title
         description {
           description
@@ -36,7 +36,8 @@ export const query = graphql`
         linkToWork
         type
         featureImage {
-          sizes {
+          fluid {
+            tracedSVG
             base64
             aspectRatio
             src
@@ -49,4 +50,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

@@ -1,5 +1,5 @@
 export const CONTAINER = {
-  WIDTH: '1170px', 
+  WIDTH: '1170px',
   PADDING: '1rem',
 }
 
@@ -8,13 +8,13 @@ export const COLOURS = {
   primaryRGB: '74, 189, 172',
   secondary: '#FC4A1A',
   secondaryHighlight: '#F7B733',
-  
+
   grey: '#DFDCE3',
 
   white: '#FFF',
   whiteRGB: '255, 255, 255',
   black: '#090909',
-  blackRGB: '0, 0, 0'
+  blackRGB: '0, 0, 0',
 }
 
 export const PADDINGS = {
@@ -23,8 +23,8 @@ export const PADDINGS = {
   S: '20px',
   M: '30px',
   L: '50px',
-  XL: '80px'
-};
+  XL: '80px',
+}
 
 export const BREAKPOINTS = {
   DESKTOP: '992px',

@@ -1,6 +1,6 @@
-import React, { cloneElement, Component } from 'react';
-import PropTypes from 'prop-types';
-import { Motion, spring } from 'react-motion';
+import React, { cloneElement, Component } from 'react'
+import PropTypes from 'prop-types'
+import { Motion, spring } from 'react-motion'
 
 const Animation = ({ children, play }) => (
   <Motion
@@ -18,19 +18,19 @@ const Animation = ({ children, play }) => (
       })
     }
   </Motion>
-);
+)
 
 class FadeInUp extends Component {
-  static propTypes = { children: PropTypes.element };
-  state = { isMounted: false };
+  static propTypes = { children: PropTypes.element }
+  state = { isMounted: false }
   componentDidMount() {
-    this.setState({ isMounted: true });
+    this.setState({ isMounted: true })
   }
   render() {
     return (
       <Animation play={this.state.isMounted}>{this.props.children}</Animation>
-    );
+    )
   }
 }
 
-export default FadeInUp;
+export default FadeInUp

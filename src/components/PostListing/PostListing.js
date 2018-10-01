@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import ArticleContainer from './PostListing-styles';
+import React from 'react'
+import { Link } from 'gatsby'
+import ArticleContainer from './PostListing-styles'
 
 const PostListing = ({ post }) => {
   return (
@@ -8,7 +8,7 @@ const PostListing = ({ post }) => {
       <div className="title-container">
         <div className="title-wrapper">
           <h3 className="title">
-            <Link to={`/journal/${post.slug}`}>{post.title}</Link>
+            <Link to={`/blog/${post.slug}`}>{post.title}</Link>
           </h3>
           <span className="date">— {post.createdAt}</span>
         </div>
@@ -17,7 +17,7 @@ const PostListing = ({ post }) => {
         {post.body.childMarkdownRemark.excerpt}
       </p>
     </ArticleContainer>
-  );
-};
+  )
+}
 
-export default PostListing;
+export default PostListing

@@ -1,10 +1,10 @@
-import styled from 'react-emotion';
-import { CONTAINER, COLOURS } from '../../utils/theme';
+import styled from 'react-emotion'
+import { CONTAINER, COLOURS } from '../../utils/theme'
 
 export const HeaderWrapper = styled('div')`
   position: relative;
   height: 3.6rem;
-`;
+`
 
 export const NavbarWrapper = styled('div')`
   background-color: ${COLOURS.primary};
@@ -12,8 +12,8 @@ export const NavbarWrapper = styled('div')`
   width: 100%;
   z-index: 2;
   overflow: hidden;
-  box-shadow: 2px 2px 4px 2px rgba(0,0,0,.2);
-`;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+`
 
 export const NavbarContainer = styled('div')`
   margin: 0 auto;
@@ -33,4 +33,4 @@ export const NavbarContainer = styled('div')`
     height: 3rem;
     margin: 0;
   }
-`;
+`

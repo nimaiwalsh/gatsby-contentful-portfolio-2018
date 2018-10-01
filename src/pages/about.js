@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import Layout from '../components/Layout';
-import FadeInUp from '../components/FadeInUp';
+import Layout from '../components/Layout'
+import FadeInUp from '../components/FadeInUp'
 
 export default class About extends Component {
   render() {
@@ -19,6 +19,6 @@ export default class About extends Component {
           </div>
         </FadeInUp>
       </Layout>
-    );
+    )
   }
 }

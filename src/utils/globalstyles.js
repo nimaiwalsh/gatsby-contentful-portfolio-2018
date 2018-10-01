@@ -1,5 +1,5 @@
-import { injectGlobal } from 'react-emotion';
-import { COLOURS } from '../utils/theme';
+import { injectGlobal } from 'react-emotion'
+import { COLOURS } from '../utils/theme'
 //Global style and resets
 const globalStyles = injectGlobal`
   body {

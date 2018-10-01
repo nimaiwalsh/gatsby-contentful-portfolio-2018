@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'gatsby-link';
-import styles from './Footer.styles';
+import React from 'react'
+import Link from 'gatsby-link'
+import styles from './Footer.styles'
 
 const Footer = () => {
   return (

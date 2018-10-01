@@ -17,7 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
     `).then(result => {
       result.data.allContentfulBlogPost.edges.forEach(({ node }) => {
         createPage({
-          path: `/journal/${node.slug}`,
+          path: `/blog/${node.slug}`,
           //Component (Template) for the new page
           component: path.resolve('./src/templates/PostPage.js'),
           //Variables to pass to the template page query

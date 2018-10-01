@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import Layout from '../components/Layout';
-import FadeInUp from '../components/FadeInUp';
+import Layout from '../components/Layout'
+import FadeInUp from '../components/FadeInUp'
 
 const ContactConfirm = () => {
   return (
@@ -18,9 +18,7 @@ const ContactConfirm = () => {
         </div>
       </FadeInUp>
     </Layout>
-  );
+  )
 }
 
-export default ContactConfirm;
-
-
+export default ContactConfirm

@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'react-emotion';
-import { Link } from 'gatsby';
-import { COLOURS } from '../../utils/theme';
+import React from 'react'
+import styled from 'react-emotion'
+import { Link } from 'gatsby'
+import { COLOURS } from '../../utils/theme'
 
 const Nav = styled('nav')`
   ul {
@@ -14,19 +14,20 @@ const Nav = styled('nav')`
     a {
       color: #fff;
       text-decoration: none;
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         border-bottom: 4px solid ${COLOURS.secondary};
       }
     }
     li {
       display: inline-block;
       &:not(:last-child) {
-        padding-right: .5rem;
+        padding-right: 0.5rem;
       }
       margin: 0;
     }
   }
-`;
+`
 
 const MainNav = props => {
   return (
@@ -46,7 +47,7 @@ const MainNav = props => {
         </li>
       </ul>
     </Nav>
-  );
-};
+  )
+}
 
-export default MainNav;
+export default MainNav

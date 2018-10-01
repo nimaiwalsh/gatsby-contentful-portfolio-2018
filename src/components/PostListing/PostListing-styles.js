@@ -1,5 +1,5 @@
-import styled from 'react-emotion';
-import { COLOURS } from '../../utils/theme';
+import styled from 'react-emotion'
+import { COLOURS } from '../../utils/theme'
 
 export const ArticleContainer = styled('article')`
   .title-wrapper {
@@ -36,4 +36,4 @@ export const ArticleContainer = styled('article')`
   }
 `
 
-export default ArticleContainer;
+export default ArticleContainer

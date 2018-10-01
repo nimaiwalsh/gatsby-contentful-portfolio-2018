@@ -1,40 +1,40 @@
-import React, { Component } from 'react';
-import { navigate } from 'gatsby';
-import Recaptcha from 'react-google-recaptcha';
+import React, { Component } from 'react'
+import { navigate } from 'gatsby'
+import Recaptcha from 'react-google-recaptcha'
 
-import Layout from '../components/Layout';
-import FadeInUp from '../components/FadeInUp';
-import FormContainer from '../pages-styles/contact.styles';
+import Layout from '../components/Layout'
+import FadeInUp from '../components/FadeInUp'
+import FormContainer from '../pages-styles/contact.styles'
 
-const RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY;
+const RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 
 /*Encode data into a useful URL*/
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
+    .join('&')
 }
 
 export default class Contact extends Component {
   constructor(props) {
-    super(props);
-    this.state = { name: '', email: '', message: '' };
+    super(props)
+    this.state = { name: '', email: '', message: '' }
   }
 
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
-    });
-  };
+    })
+  }
 
   handleRecaptcha = value => {
-    this.setState({ 'g-recaptcha-response': value });
-  };
+    this.setState({ 'g-recaptcha-response': value })
+  }
 
   /*Netlify  parameters in here that are picked up by the bots for form submission*/
   handleSubmit = e => {
-    e.preventDefault();
-    const form = e.target;
+    e.preventDefault()
+    const form = e.target
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -45,12 +45,12 @@ export default class Contact extends Component {
     })
       .then(() => navigate(form.getAttribute('action')))
       .catch(err => alert(err))
-  };
+  }
 
   // data-netlify-honeypot="bot-field"
 
   render() {
-    const { name, email, message } = this.state;
+    const { name, email, message } = this.state
     return (
       <Layout>
         <FadeInUp>
@@ -112,6 +112,6 @@ export default class Contact extends Component {
           </section>
         </FadeInUp>
       </Layout>
-    );
+    )
   }
 }

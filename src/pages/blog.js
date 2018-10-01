@@ -1,9 +1,9 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout';
-import PostListing from '../components/PostListing/PostListing';
-import FadeInUp from '../components/FadeInUp';
+import Layout from '../components/Layout'
+import PostListing from '../components/PostListing/PostListing'
+import FadeInUp from '../components/FadeInUp'
 
 const Blog = ({ data }) => {
   return (
@@ -17,14 +17,14 @@ const Blog = ({ data }) => {
         </section>
       </FadeInUp>
     </Layout>
-  );
-};
+  )
+}
 
-export default Blog;
+export default Blog
 
 export const query = graphql`
   query PostList {
-    allContentfulBlogPost(sort: {fields: [createdAt], order: DESC},) {
+    allContentfulBlogPost(sort: { fields: [createdAt], order: DESC }) {
       totalCount
       edges {
         node {
@@ -41,4 +41,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

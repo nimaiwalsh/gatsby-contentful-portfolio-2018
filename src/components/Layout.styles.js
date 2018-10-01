@@ -1,5 +1,5 @@
-import styled from 'react-emotion';
-import { CONTAINER } from '../utils/theme'; 
+import styled from 'react-emotion'
+import { CONTAINER } from '../utils/theme'
 
 export const LayoutWrapper = styled('div')`
   position: relative;
@@ -11,4 +11,4 @@ export const ContentWrapper = styled('main')`
   min-height: 50rem;
   max-width: ${CONTAINER.WIDTH};
   padding: 0 1rem;
-`;
+`

@@ -1,5 +1,5 @@
-import { css } from 'react-emotion';
-import { CONTAINER, COLOURS } from '../../utils/theme';
+import { css } from 'react-emotion'
+import { CONTAINER, COLOURS } from '../../utils/theme'
 
 export const styles = css`
   padding: 2rem 0;
@@ -17,7 +17,8 @@ export const styles = css`
     a {
       color: ${COLOURS.secondary};
     }
-    a:hover, a:active {
+    a:hover,
+    a:active {
       border-bottom: 3px solid ${COLOURS.white};
     }
   }
@@ -40,6 +41,6 @@ export const styles = css`
       margin-bottom: 0;
     }
   }
-`;
+`
 
-export default styles;
+export default styles
