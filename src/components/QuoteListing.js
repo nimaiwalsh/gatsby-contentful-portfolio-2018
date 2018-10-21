@@ -1,54 +1,67 @@
 import React, { Component } from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-
+import shuffle from 'lodash/shuffle'
+import {
+  Container,
+  QuoteContainer,
+  Button,
+  BlockQuote,
+  Quote,
+  Author,
+} from './QuoteListing-styles'
+import SocialMediaShare from './SocialMediaShare'
 class QuoteListing extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      quoteRef: 0
+      quoteOrder: [0],
+      quoteRef: 0,
     }
   }
 
-  randomQuote = (quotes) => {
-    let random = Math.floor(Math.random() * (quotes.length))
-    this.setState({ quoteRef: random })
-  } 
+  componentDidMount() {
+    this.createRandomSequence()
+  }
+
+  //A shuffled array sequence to randomise display of Quotes
+  //on each page refresh
+  createRandomSequence() {
+    const shuffleSequence = shuffle(
+      Array.from(Array(this.props.quotes.length).keys())
+    )
+    this.setState({ quoteOrder: shuffleSequence })
+  }
+
+  nextQuote = () => {
+    const { quoteRef, quoteOrder } = this.state
+
+    if (quoteRef < quoteOrder.length - 1) {
+      this.setState({ quoteRef: quoteRef + 1 })
+    } else {
+      this.setState({ quoteRef: 0 })
+    }
+  }
 
   render() {
+    const { quoteOrder, quoteRef } = this.state
+    const { author } = this.props.quotes[quoteOrder[quoteRef]].node
+    const { quote } = this.props.quotes[quoteOrder[quoteRef]].node.quote
+
     return (
-      <StaticQuery
-        query={graphql`
-          query Quotes {
-            allContentfulQuotes {
-              edges {
-                node {
-                  quote {
-                    quote
-                  }
-                  author
-                }
-              }
-            }
-          }
-        `}
-        render={data => {
-          let { quoteRef } = this.state
-          let { author } = data.allContentfulQuotes.edges[quoteRef].node
-          let { quote } = data.allContentfulQuotes.edges[quoteRef].node.quote
-          return (
-            <section>
-              <div onClick={() => this.randomQuote(data.allContentfulQuotes.edges)}>RANDOM</div>
-              <div>
-                <span>{ author }</span>
-                <span>{ quote }</span>
-              </div>
-            </section>
-          )
-        }}
-      />
+      <Container>
+        <Button onClick={this.nextQuote}>New Quote</Button>
+        <QuoteContainer>
+          <BlockQuote>
+            <Quote>{quote}</Quote>
+            <Author>{author}</Author>
+          </BlockQuote>
+          <SocialMediaShare
+            content={`${quote} - ${author}`}
+            link={'https://nimaiwalsh.com'}
+          />
+        </QuoteContainer>
+      </Container>
     )
   }
 }
-
 
 export default QuoteListing

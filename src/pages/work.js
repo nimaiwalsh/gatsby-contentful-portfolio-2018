@@ -37,14 +37,7 @@ export const query = graphql`
         type
         featureImage {
           fluid {
-            tracedSVG
-            base64
-            aspectRatio
-            src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
+            ...GatsbyContentfulFluid_tracedSVG
           }
         }
       }

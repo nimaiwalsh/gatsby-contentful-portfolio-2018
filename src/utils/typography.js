@@ -1,5 +1,4 @@
 import Typography from 'typography'
-import { COLOURS } from './theme'
 import sutroTheme from 'typography-theme-sutro'
 sutroTheme.baseFontSize = '20px'
 sutroTheme.googleFonts = [
@@ -13,9 +12,9 @@ sutroTheme.googleFonts = [
   },
 ]
 
-sutroTheme.overrideThemeStyles = options => ({
-  //styles in here
-})
+// sutroTheme.overrideThemeStyles = options => ({
+//   //styles in here
+// })
 
 // const typography = new Typography({ baseFontSize: "20px" });
 const typography = new Typography(sutroTheme)
