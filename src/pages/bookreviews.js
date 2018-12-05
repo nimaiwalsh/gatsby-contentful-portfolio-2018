@@ -2,17 +2,17 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import PostListing from '../components/ListingPost/PostListing'
+import BookListing from '../components/ListingBook/BookListing'
 import FadeInUp from '../components/FadeInUp'
 
-const Blog = ({ data }) => {
+const BookReviews = ({ data }) => {
   return (
     <Layout>
       <FadeInUp>
         <section>
-          <h1>Blog</h1>
-          {data.allContentfulBlogPost.edges.map(({ node }) => (
-            <PostListing post={node} key={node.id} />
+          <h1>Book reviews</h1>
+          {data.allContentfulBookReview.edges.map(({node}) => (
+            <BookListing book={node} key={node.id}/>
           ))}
         </section>
       </FadeInUp>
@@ -20,25 +20,25 @@ const Blog = ({ data }) => {
   )
 }
 
-export default Blog
+export default BookReviews
 
 export const query = graphql`
-  query PostList {
-    allContentfulBlogPost(sort: { fields: [createdAt], order: DESC }) {
-      totalCount
+  query BookList {
+    allContentfulBookReview {
       edges {
         node {
           id
           createdAt(formatString: "DD MMM YYYY")
           title
           slug
-          body {
+          author
+          summary {
             childMarkdownRemark {
               excerpt
             }
           }
         }
       }
-    }
+	  }
   }
 `

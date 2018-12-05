@@ -25,8 +25,34 @@ exports.createPages = ({ graphql, actions }) => {
             slug: node.slug,
           },
         });
-      });
-      resolve();
+      });      
     });
+
+    // New Book Review Pages
+    graphql(`
+      {
+        allContentfulBookReview {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `).then(result => {
+      result.data.allContentfulBookReview.edges.forEach(({ node }) => {
+        createPage({
+          path: `/bookreviews/${node.slug}`,
+          //Component (Template) for the new page
+          component: path.resolve('./src/templates/BookReviewPage.js'),
+          //Variables to pass to the template page query
+          context: {
+            slug: node.slug,
+          },
+        });
+      });
+    });
+
+    resolve();
   });
 };

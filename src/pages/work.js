@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import FadeInUp from '../components/FadeInUp'
-import ProjectListing from '../components/ProjectListing/ProjectListing'
+import ProjectListing from '../components/ListingProject/ProjectListing'
 
 const Work = ({ data }) => {
   return (

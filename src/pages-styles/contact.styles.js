@@ -1,5 +1,4 @@
 import styled from 'react-emotion';
-import { COLOURS } from '../utils/theme';
 
 const FormContainer = styled('div')`
 
