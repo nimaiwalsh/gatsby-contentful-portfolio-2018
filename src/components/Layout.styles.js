@@ -11,4 +11,8 @@ export const ContentWrapper = styled('main')`
   min-height: 50rem;
   max-width: ${CONTAINER.WIDTH};
   padding: 0 1rem;
+
+  ul, ol {
+    margin-left: 1.78rem;
+  }
 `
