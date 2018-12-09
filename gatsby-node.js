@@ -1,9 +1,10 @@
 const path = require('path');
 
-//Create a new page for each post from Contentful
+// Create a new pages for different content types
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   return new Promise((resolve, reject) => {
+    // Blog Post pages
     graphql(`
       {
         allContentfulBlogPost {
@@ -28,7 +29,7 @@ exports.createPages = ({ graphql, actions }) => {
       });      
     });
 
-    // New Book Review Pages
+    // Book Review Pages
     graphql(`
       {
         allContentfulBookReview {
@@ -43,9 +44,9 @@ exports.createPages = ({ graphql, actions }) => {
       result.data.allContentfulBookReview.edges.forEach(({ node }) => {
         createPage({
           path: `/bookreviews/${node.slug}`,
-          //Component (Template) for the new page
+          // Component (Template) for the new page
           component: path.resolve('./src/templates/BookReviewPage.js'),
-          //Variables to pass to the template page query
+          // Variables to pass to the template page query
           context: {
             slug: node.slug,
           },

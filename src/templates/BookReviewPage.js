@@ -5,17 +5,44 @@ import Layout from '../components/Layout'
 
 class BookReview extends Component {
   render() {
-    const { data } = this.props
+    const {
+      id,
+      createdAt,
+      title,
+      slug,
+      author,
+      link,
+      summary,
+      body,
+    } = this.props.data.contentfulBookReview
     //Loading status
-    if (!data) {
+    if (!this.props.data) {
       return <article>Loading...</article>
     }
-    console.log(data)
+    console.log(this.props.data)
     return (
       <Layout>
-        <Link to="/blog">Back</Link>
+        <Link to="/bookreviews">Back</Link>
         <article>
-          Book Review
+          <h1>{title}</h1>
+          <h2>Auhor: {author}</h2>
+          <a href={link} target="_blank">
+            View on amazon
+          </a>
+
+          <h3>Summary</h3>
+          <div>{summary.summary}</div>
+
+          <h3>Notes</h3>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: body.childMarkdownRemark.html,
+            }}
+          />
+
+          <div>
+            <p>Posted with love on{' '}<time>{createdAt}</time></p>
+          </div>
         </article>
       </Layout>
     )
@@ -30,7 +57,7 @@ export const query = graphql`
   query BookReview($slug: String!) {
     contentfulBookReview(slug: { eq: $slug }) {
       id
-      createdAt
+      createdAt(formatString: "DD MMM YYYY")
       title
       slug
       author
@@ -39,7 +66,9 @@ export const query = graphql`
         summary
       }
       body {
-        body
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }
