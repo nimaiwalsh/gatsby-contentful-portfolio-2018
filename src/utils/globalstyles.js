@@ -5,7 +5,7 @@ const globalStyles = injectGlobal`
   /*Default font set at 20px for Typography*/
   /*20/16 = 125%*/
   html {
-    font-size: 125%
+    font-size: 125%;
   }
   body {
     background-color: #F3F3F3;
