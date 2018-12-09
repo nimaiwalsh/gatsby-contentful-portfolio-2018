@@ -6,10 +6,8 @@ import Layout from '../components/Layout'
 class BookReview extends Component {
   render() {
     const {
-      id,
       createdAt,
       title,
-      slug,
       author,
       link,
       summary,
@@ -26,7 +24,7 @@ class BookReview extends Component {
         <article>
           <h1>{title}</h1>
           <h2>Auhor: {author}</h2>
-          <a href={link} target="_blank">
+          <a href={link} target="_blank" rel="noopener noreferrer">
             View on amazon
           </a>
 
