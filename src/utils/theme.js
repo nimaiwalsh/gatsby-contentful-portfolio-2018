@@ -33,3 +33,22 @@ export const BREAKPOINTS = {
   MOBILE: '767px',
   DEFAULT: '768px',
 }
+
+export const MEDIAQUERY = {
+  //0 - 600px: Phone
+  //600 - 900px: Tablet portrait
+  //900 - 1200px: Tablet landscape
+  //[1200-1800]: Desktop first - this is where all our normal styles appear
+  //1800px +: Big desktop
+
+  //em are better than rem's in Media Queries - more stable. 
+  //1em = 16px
+
+  //Order of applying modia queries
+  // Base/Global + tyography > General Layout + grid > page layout > components
+
+  bigDesktop: '@media (min-width: 112.5em)', //1800px
+  tabletLand: '@media (max-width: 75em)', //1200px
+  tabletPort: '@media (max-width: 56.25em)', //900px 900/16
+  phone: '@media (max-width: 37.5em)', //600px 600/16
+}

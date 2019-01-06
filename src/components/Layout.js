@@ -12,12 +12,6 @@ import globalStyles from '../utils/globalstyles'
 //CSS Theme for PrismJS code blocks
 import '../utils/prismjs-theme/prism.css'
 
-// //Web Animations API Polyfill - makes web animations work across all browsers
-// eslint-disable-next-line
-let animationpoly
-if (typeof document !== 'undefined')
-  animationpoly = require('web-animations-js')
-
 //Wrapper template to wrap all pages
 //location prop comes from gatsby's router
 const Layout = ({ children }) => (

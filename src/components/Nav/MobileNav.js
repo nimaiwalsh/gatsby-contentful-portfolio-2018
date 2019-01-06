@@ -1,45 +1,59 @@
-import React from 'react'
-import styled from 'react-emotion'
-import { Link } from 'gatsby'
+import React, { Component } from 'react'
+import Link from 'gatsby-link'
 
-const Nav = styled('nav')`
-  width: 100%;
-  align-items: center;
-  display: ${props => (props.open ? 'block' : 'none')};
+import {
+  NavigationContainer,
+  NavigationBackground,
+  NavigationButton,
+  BurgerMenuIcon,
+  Nav,
+} from './MobileNav.styles'
 
-  ul {
-    list-style: none;
-    margin: 0;
+export default class MobileNav extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      navopen: false,
+    }
   }
 
-  li {
-    text-align: center;
+  toggleNav = () => {
+    this.setState({ navopen: !this.state.navopen })
   }
 
-  a {
-    color: #fff;
+  render() {
+    const { navopen } = this.state
+    return (
+      <NavigationContainer>
+        <NavigationBackground navOpen={navopen} />
+        <NavigationButton onClick={this.toggleNav}>
+          <BurgerMenuIcon navOpen={navopen} />
+        </NavigationButton>
+        <Nav navOpen={navopen}>
+          <ul className="list" onClick={this.toggleNav}>
+            <li className="item">
+              <Link className="link" to="#about">
+                Work
+              </Link>
+            </li>
+            <li className="item">
+              <Link className="link" to="#features">
+                About
+              </Link>
+            </li>
+            <li className="item">
+              <Link className="link" to="#tours">
+                Blog
+              </Link>
+            </li>
+            <li className="item">
+              <Link className="link" to="#stories">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </Nav>
+      </NavigationContainer>
+    )
   }
-`
-
-const MobileNav = ({ open, menuClick }) => {
-  return (
-    <Nav open={open}>
-      <ul onClick={() => menuClick()}>
-        <li>
-          <Link to="/work">Work</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/blog">Blog</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
-    </Nav>
-  )
 }
-
-export default MobileNav
