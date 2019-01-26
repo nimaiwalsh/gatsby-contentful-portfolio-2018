@@ -23,9 +23,11 @@ const Animation = ({ children, play }) => (
 class FadeInUp extends Component {
   static propTypes = { children: PropTypes.element }
   state = { isMounted: false }
+
   componentDidMount() {
     this.setState({ isMounted: true })
   }
+  
   render() {
     return (
       <Animation play={this.state.isMounted}>{this.props.children}</Animation>

@@ -9,11 +9,11 @@ import Footer from './Footer/Footer'
 
 // eslint-disable-next-line
 import globalStyles from '../utils/globalstyles'
-//CSS Theme for PrismJS code blocks
+// CSS Theme for PrismJS code blocks
 import '../utils/prismjs-theme/prism.css'
 
-//Wrapper template to wrap all pages
-//location prop comes from gatsby's router
+// Wrapper template to wrap all pages
+// location prop comes from gatsby's router
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`

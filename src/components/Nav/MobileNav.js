@@ -32,22 +32,22 @@ export default class MobileNav extends Component {
         <Nav navOpen={navopen}>
           <ul className="list" onClick={this.toggleNav}>
             <li className="item">
-              <Link className="link" to="#about">
+              <Link className="link" to="./work">
                 Work
               </Link>
             </li>
             <li className="item">
-              <Link className="link" to="#features">
+              <Link className="link" to="./about">
                 About
               </Link>
             </li>
             <li className="item">
-              <Link className="link" to="#tours">
+              <Link className="link" to="./blog">
                 Blog
               </Link>
             </li>
             <li className="item">
-              <Link className="link" to="#stories">
+              <Link className="link" to="./contact">
                 Contact
               </Link>
             </li>

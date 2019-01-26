@@ -1,7 +1,7 @@
 import styled from 'react-emotion'
 // import { CONTAINER } from '../utils/theme'
 
-export const Container = styled('section')`
+export const Container = styled('div')`
   text-align: center;
   height: auto;
 `

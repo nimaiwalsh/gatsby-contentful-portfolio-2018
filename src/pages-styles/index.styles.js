@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'react-emotion';
-import { CONTAINER, PADDINGS, BREAKPOINTS, COLOURS } from '../utils/theme';
+import { CONTAINER, COLOURS } from '../utils/theme';
 
 export const HeroSection = styled('section')`
   /*This section makes image full width while a child of fixed width container*/
@@ -76,88 +76,4 @@ export const HeaderContent = styled('div')`
     animation-delay: 1.5s;
     color: ${COLOURS.secondary};
   }
-`;
-
-export const SectionWrapper = styled('section')`
-  margin: 0 auto;
-  height: 100%;
-  max-width: ${CONTAINER.WIDTH};
-  padding: 2rem 0;
-  display: grid;
-  grid-gap: ${PADDINGS.M};
-  grid-template-columns: 1fr 1fr 1fr;
-
-  .work {
-    grid-column: 1 / span 2;
-  }
-
-  .journal {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-  }
-
-  .contact {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .about {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  @media (max-width: ${BREAKPOINTS.TABLETMAX}) {
-    grid-template-columns: 1fr 1fr;
-
-    .work {
-      grid-column: 1 / span 2;
-    }
-
-    .journal {
-      grid-column: 1;
-      grid-row: 2 / span 2;
-    }
-
-    .contact {
-      grid-column: 2;
-      grid-row: 2;
-    }
-
-    .about {
-      grid-column: 2;
-      grid-row: 3;
-    }
-  }
-
-  @media (max-width: ${BREAKPOINTS.MOBILE}) {
-    grid-template-columns: 1fr;
-
-    .work {
-      grid-column: 1;
-      grid-row: 1;
-    }
-
-    .journal {
-      grid-column: 1;
-      grid-row: 2;
-    }
-
-    .contact {
-      grid-column: 1;
-      grid-row: 3;
-    }
-
-    .about {
-      grid-column: 1;
-      grid-row: 4;
-    }
-  }
-`;
-
-export const Box = styled('div')`
-  background-color: #fff;
-  font-size: 150%;
-  box-shadow: 0 3px 5px 0 rgba(0, 1, 1, 0.1);
-  background-color: #fff;
-  padding: 20px;
 `;

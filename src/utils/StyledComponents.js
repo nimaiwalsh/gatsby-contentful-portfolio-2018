@@ -1,5 +1,5 @@
 import styled from 'react-emotion'
 
-export const Row = styled('div')`
+export const Section = styled('section')`
   padding: 2rem 0;
 `

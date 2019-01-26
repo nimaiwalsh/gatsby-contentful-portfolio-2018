@@ -22,8 +22,8 @@ class QuoteListing extends Component {
     this.createRandomSequence()
   }
 
-  //A shuffled array sequence to randomise display of Quotes
-  //on each page refresh
+  // A shuffled array sequence to randomise display of Quotes
+  // on each page refresh
   createRandomSequence() {
     const shuffleSequence = shuffle(
       Array.from(Array(this.props.quotes.length).keys())

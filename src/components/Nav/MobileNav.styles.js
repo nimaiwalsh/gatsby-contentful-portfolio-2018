@@ -17,7 +17,7 @@ export const NavigationBackground = styled('div')`
 
   /*ANIMATION EFFECT*/
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-  transform: ${props => props.navOpen && 'scale(80)'};
+  transform: ${props => props.navOpen && 'scale(100)'};
 `
 
 export const BurgerMenuIcon = styled('span')`
@@ -28,7 +28,7 @@ export const BurgerMenuIcon = styled('span')`
   &::before,
   &::after {
     display: inline-block;
-    background-color: ${COLOURS.grey};
+    background-color: ${COLOURS.black};
     width: 1rem;
     height: 3px;
   }

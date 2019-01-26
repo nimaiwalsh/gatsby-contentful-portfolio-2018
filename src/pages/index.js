@@ -5,47 +5,52 @@ import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import FadeInUp from '../components/FadeInUp'
 import QuoteListing from '../components/QuoteListing'
-import { Row } from '../utils/StyledComponents'
+import CardList from '../components/CardList'
+import Card from '../components/Card'
+import { Section } from '../utils/StyledComponents'
 import {
   HeroSection,
   BackgroundImage,
   HeaderContent,
-  SectionWrapper,
-  Box,
 } from '../pages-styles/index.styles'
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <HeroSection>
-      <BackgroundImage>
-        <Img
-          className="header-image"
-          fluid={data.headerImage.childImageSharp.fluid}
-        />
-        <div className="header-image-overlay" />
-      </BackgroundImage>
-      <HeaderContent>
+const IndexPage = ({ data }) => {
+  const bookReviews = data.allContentfulBookReview.edges
+
+  return (
+    <Layout>
+      <HeroSection>
+        <BackgroundImage>
+          <Img
+            className="header-image"
+            fluid={data.headerImage.childImageSharp.fluid}
+          />
+          <div className="header-image-overlay" />
+        </BackgroundImage>
+        <HeaderContent>
+          <div>
+            <span>Hello beautiful earth</span>
+            <h1>Nimai Walsh - Web Developer</h1>
+          </div>
+        </HeaderContent>
+      </HeroSection>
+      <FadeInUp>
         <div>
-          <span>Hello beautiful earth</span>
-          <h1>Nimai Walsh - Web Developer</h1>
+          <Section>
+            <h2>Inspirational quotes</h2>
+            <QuoteListing quotes={data.allContentfulQuotes.edges} />
+          </Section>
+          <Section>
+            <h2>Recent books</h2>
+            <CardList>
+              {bookReviews.map(({ node }) => <Card key={node.id} {...node} bookReview />)}
+            </CardList>
+          </Section>
         </div>
-      </HeaderContent>
-    </HeroSection>
-    <FadeInUp>
-      <div>
-        <Row>
-          <QuoteListing quotes={data.allContentfulQuotes.edges} />
-        </Row>
-        <SectionWrapper>
-          <Box className="work">Work</Box>
-          <Box className="journal">Journal</Box>
-          <Box className="contact">Contact</Box>
-          <Box className="about">About</Box>
-        </SectionWrapper>
-      </div>
-    </FadeInUp>
-  </Layout>
-)
+      </FadeInUp>
+    </Layout>
+  )
+}
 
 export default IndexPage
 
@@ -71,6 +76,25 @@ export const query = graphql`
             quote
           }
           author
+        }
+      }
+    }
+    allContentfulBookReview(
+      sort: { fields: createdAt, order: DESC }
+      limit: 3
+    ) {
+      edges {
+        node {
+          id
+          createdAt(formatString: "DD MMM YYYY")
+          title
+          slug
+          author
+          summary {
+            childMarkdownRemark {
+              excerpt
+            }
+          }
         }
       }
     }
