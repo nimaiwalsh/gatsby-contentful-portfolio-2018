@@ -4,8 +4,10 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import BookListing from '../components/ListingBook/BookListing'
 import FadeInUp from '../components/FadeInUp'
+import Pagination from '../components/Pagination'
 
-const BookReviews = ({ data }) => {
+const BookReviews = ({ data, pageContext }) => {
+
   return (
     <Layout>
       <FadeInUp>
@@ -14,6 +16,8 @@ const BookReviews = ({ data }) => {
           {data.allContentfulBookReview.edges.map(({node}) => (
             <BookListing book={node} key={node.id}/>
           ))}
+          
+          <Pagination pageContext={pageContext}/>
         </section>
       </FadeInUp>
     </Layout>
@@ -23,8 +27,12 @@ const BookReviews = ({ data }) => {
 export default BookReviews
 
 export const query = graphql`
-  query BookList {
-    allContentfulBookReview {
+  query BookReviewList($skip: Int!, $limit: Int!) {
+    allContentfulBookReview(
+      sort: { fields: [createdAt], order: DESC },
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           id

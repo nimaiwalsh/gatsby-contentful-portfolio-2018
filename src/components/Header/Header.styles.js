@@ -4,8 +4,8 @@ import { CONTAINER, COLOURS } from '../../utils/theme'
 export const HeaderWrapper = styled('div')`
   height: 3.6rem;
   background-color: ${COLOURS.primary};
-  position: fixed;
-  top: 0;
+  /* position: fixed;
+  top: 0; */
   width: 100%;
   z-index: 2;
   box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);

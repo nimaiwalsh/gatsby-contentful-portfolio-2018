@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import styled from 'react-emotion'
 
-import { LayoutWrapper, ContentWrapper } from './Layout.styles'
+import { CONTAINER } from '../utils/theme'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 
@@ -55,3 +56,19 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+const LayoutWrapper = styled('div')`
+  position: relative;
+`
+
+const ContentWrapper = styled('main')`
+  margin: 0 auto;
+  height: 100%;
+  min-height: 50rem;
+  max-width: ${CONTAINER.WIDTH};
+  padding: 0 1rem;
+
+  ul, ol {
+    margin-left: 1.78rem;
+  }
+`
