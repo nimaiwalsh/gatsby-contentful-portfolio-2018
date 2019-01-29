@@ -50,7 +50,7 @@ class QuoteListing extends Component {
       <Container>
         <Button onClick={this.nextQuote}>New Quote</Button>
         <QuoteContainer>
-          <BlockQuote>
+          <BlockQuote key={quoteRef}>
             <Quote>{quote}</Quote>
             <Author>{author}</Author>
           </BlockQuote>

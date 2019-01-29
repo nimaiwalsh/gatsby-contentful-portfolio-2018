@@ -44,7 +44,7 @@ export const MEDIAQUERY = {
   //em are better than rem's in Media Queries - more stable. 
   //1em = 16px
 
-  //Order of applying modia queries
+  //Order of applying media queries
   // Base/Global + tyography > General Layout + grid > page layout > components
 
   bigDesktop: '@media (min-width: 112.5em)', //1800px

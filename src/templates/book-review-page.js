@@ -49,8 +49,8 @@ class BookReview extends Component {
 
 export default BookReview
 
-//The slug from this page is used to retrieve the correct data
-//The $slug argument is passed from the create page 'context' from gatsby-node.js
+// The slug from this page is used to retrieve the correct data
+// The $slug argument is passed from the create page 'context' from gatsby-node.js
 export const query = graphql`
   query BookReview($slug: String!) {
     contentfulBookReview(slug: { eq: $slug }) {

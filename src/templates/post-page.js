@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 class PostPage extends Component {
   render() {
     const { data } = this.props
-    //Loading status
+    // Loading status
     if (!data) {
       return <article>Loading...</article>
     }

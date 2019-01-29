@@ -1,5 +1,10 @@
-import styled from 'react-emotion'
+import styled, { keyframes} from 'react-emotion'
 // import { CONTAINER } from '../utils/theme'
+
+const fadeIn = keyframes`
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+`
 
 export const Container = styled('div')`
   text-align: center;
@@ -18,6 +23,7 @@ export const QuoteContainer = styled('section')`
 
 export const BlockQuote = styled('blockquote')`
   position: relative;
+  animation: ${fadeIn} 2s;
 `
 
 export const Quote = styled('p')`
