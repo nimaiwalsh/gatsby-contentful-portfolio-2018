@@ -84,31 +84,31 @@ exports.createPages = ({ graphql, actions }) => {
 
   const loadPages = new Promise((resolve, reject) => {
     // Blog Post pages
-    graphql(`
-      {
-        allContentfulBlogPost {
-          edges {
-            node {
-              slug
-            }
-          }
-        }
-      }
-    `).then(result => {
-      result.data.allContentfulBlogPost.edges.forEach(({ node }) => {
-        createPage({
-          path: `/blog/${node.slug}`,
-          //Component (Template) for the new page
-          component: path.resolve('./src/templates/post-page.js'),
-          //Variables to pass to the template page query
-          context: {
-            slug: node.slug,
-          },
-        });
-      });      
-    });
+    // graphql(`
+    //   {
+    //     allContentfulBlogPost {
+    //       edges {
+    //         node {
+    //           slug
+    //         }
+    //       }
+    //     }
+    //   }
+    // `).then(result => {
+    //   result.data.allContentfulBlogPost.edges.forEach(({ node }) => {
+    //     createPage({
+    //       path: `/blog/${node.slug}`,
+    //       //Component (Template) for the new page
+    //       component: path.resolve('./src/templates/post-page.js'),
+    //       //Variables to pass to the template page query
+    //       context: {
+    //         slug: node.slug,
+    //       },
+    //     });
+    //   });      
+    // });
 
-    resolve();
+    // resolve();
   });
 
   return Promise.all([loadPosts])

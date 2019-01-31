@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled from 'react-emotion'
 
 import { CONTAINER } from '../utils/theme'
-import Header from './Header/Header'
+import Header from './Header'
 import Footer from './Footer/Footer'
 
 // eslint-disable-next-line
@@ -59,6 +59,8 @@ export default Layout
 
 const LayoutWrapper = styled('div')`
   position: relative;
+  /* Padding same width as fixed Header */
+  padding-top: 72px;
 `
 
 const ContentWrapper = styled('main')`
