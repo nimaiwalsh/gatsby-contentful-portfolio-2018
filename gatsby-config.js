@@ -1,3 +1,10 @@
+// Environment variables
+let env = process.env.NODE_ENV || 'development'
+
+// This adds dotenv (for storing environment variables) to gatsby 
+require('dotenv').config({path: `./.env.${env}`});
+
+// Plugin Configurations
 module.exports = {
   siteMetadata: {
     title: 'Nimai Walsh - Web Developer',
@@ -27,9 +34,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: 'oqzlzf0m004q',
-        accessToken:
-          '0dab9fa4218fba4a3e2008d72b94d9f1478e90c447360ae27103171ef3088a6a',
+        spaceId: `${process.env.GATSBY_CONTENTFUL_SPACE_ID}`,
+        accessToken: `${process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN}`,
       },
     },
     {
