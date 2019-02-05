@@ -16,12 +16,14 @@ const globalStyles = injectGlobal`
   body {
     background-color: #F3F3F3;
     box-sizing: border-box;
-  }
-  a {
-    color: ${COLOURS.secondary};
-  }
-  a:hover {
-    text-decoration: none;
+
+    a {
+      color: ${COLOURS.secondary};
+    }
+    
+    a:hover {
+      text-decoration: none;
+    }
   }
 `
 

@@ -27,6 +27,9 @@ const CardWrapper = styled('div')`
   background-color: #fff;
   padding: 20px;
   color: ${COLOURS.black};
+  a {
+    text-decoration: none;
+  }
 `
 const Title = styled('h4')`
   margin-top: 0
