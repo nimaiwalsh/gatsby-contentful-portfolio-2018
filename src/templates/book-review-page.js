@@ -10,6 +10,7 @@ class BookReview extends Component {
       title,
       author,
       link,
+      isbn,
       summary,
       body,
     } = this.props.data.contentfulBookReview
@@ -22,6 +23,7 @@ class BookReview extends Component {
       <Layout>
         <Link to="/bookreviews">Back</Link>
         <article>
+          <img alt="book cover" src={`https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`} />
           <h1>{title}</h1>
           <h2>Auhor: {author}</h2>
           <a href={link} target="_blank" rel="noopener noreferrer">
@@ -60,6 +62,7 @@ export const query = graphql`
       slug
       author
       link
+      isbn
       summary {
         summary
       }
