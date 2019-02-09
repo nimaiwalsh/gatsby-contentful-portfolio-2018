@@ -46,6 +46,12 @@ const IndexPage = ({ data }) => {
               {bookReviews.map(({ node }) => <Card key={node.id} {...node} bookReview />)}
             </CardList>
           </Section>
+          <Section>
+            <h2>Recent posts</h2>
+            <CardList>
+              {bookReviews.map(({ node }) => <Card key={node.id} {...node} bookReview />)}
+            </CardList>
+          </Section>
         </div>
       </FadeInUp>
     </Layout>

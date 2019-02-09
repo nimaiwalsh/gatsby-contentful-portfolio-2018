@@ -2,7 +2,7 @@ import styled from 'react-emotion'
 import { Link } from 'gatsby' 
 
 export const Section = styled('section')`
-  padding: 2rem 0;
+  padding-bottom: 1rem;
 `
 
 export const ButtonNext = styled(Link)`
