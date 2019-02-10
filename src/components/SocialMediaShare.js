@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -22,7 +22,7 @@ const SocialMediaShare = ({ content, link }) => {
 
 export default SocialMediaShare
 
-const SocialContainer = styled('div')`
+const SocialContainer = styled.div`
   display: flex;
   justify-content: center;
 

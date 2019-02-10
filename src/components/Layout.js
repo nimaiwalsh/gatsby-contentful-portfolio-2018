@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
+import { Global } from '@emotion/core'
 
 import { CONTAINER } from '../utils/theme'
 import Header from './Header'
@@ -28,6 +29,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <LayoutWrapper>
+        <Global styles={globalStyles} />
         <Helmet
           title="Nimai Walsh - Web Developer"
           meta={[
@@ -57,7 +59,7 @@ Layout.propTypes = {
 
 export default Layout
 
-const LayoutWrapper = styled('div')`
+const LayoutWrapper = styled.div`
   position: relative;
   /* Padding same width as fixed Header */
   padding-top: 72px;

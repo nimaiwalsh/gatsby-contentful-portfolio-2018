@@ -1,7 +1,7 @@
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import { COLOURS } from '../../utils/theme'
 
-export const NavigationBackground = styled('div')`
+export const NavigationBackground = styled.div`
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 50%;
@@ -62,7 +62,7 @@ export const BurgerMenuIcon = styled('span')`
   }
 `
 
-export const NavigationButton = styled('div')`
+export const NavigationButton = styled.div`
   background-color: ${COLOURS.white};
   height: 2.5rem;
   width: 2.5rem;
@@ -137,5 +137,5 @@ export const Nav = styled('nav')`
   }
 `
 
-export const NavigationContainer = styled('div')`
+export const NavigationContainer = styled.div`
 `

@@ -1,7 +1,8 @@
-import styled, { keyframes } from 'react-emotion';
+import styled from '@emotion/styled';
+import { keyframes } from '@emotion/core'
 import { CONTAINER, COLOURS } from '../utils/theme';
 
-export const HeroSection = styled('section')`
+export const HeroSection = styled.section`
   /*This section makes image full width while a child of fixed width container*/
   width: 100vw;
   position: relative;
@@ -14,7 +15,7 @@ export const HeroSection = styled('section')`
   height: 20rem;
 `;
 
-export const BackgroundImage = styled('div')`
+export const BackgroundImage = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -51,7 +52,7 @@ const fadein = keyframes`
   }
 `;
 
-export const HeaderContent = styled('div')`
+export const HeaderContent = styled.div`
   max-width: ${CONTAINER.WIDTH};
   padding: 1.5rem 1rem;
   margin: 0 auto;

@@ -1,9 +1,9 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { COLOURS } from '../../utils/theme'
 
-const Nav = styled('nav')`
+const Nav = styled.nav`
   ul {
     margin: 0;
     list-style: none;
@@ -29,7 +29,7 @@ const Nav = styled('nav')`
   }
 `
 
-const MainNav = props => {
+const MainNav = () => {
   return (
     <Nav>
       <ul>

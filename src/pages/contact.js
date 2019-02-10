@@ -100,6 +100,7 @@ export default class Contact extends Component {
                   className="input-message"
                 />
                 <Recaptcha
+                  // eslint-disable-next-line react/no-string-refs
                   ref="recaptcha"
                   sitekey={RECAPTCHA_KEY}
                   onChange={this.handleRecaptcha}

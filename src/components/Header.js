@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 
 import { CONTAINER, COLOURS } from '../utils/theme'
 import { Mobile, Default } from '../utils/responsive-components'
@@ -28,7 +28,7 @@ export default class Header extends Component {
   }
 }
 
-export const HeaderWrapper = styled('div')`
+export const HeaderWrapper = styled.div`
   height: 72px;
   background-color: ${COLOURS.primary};
   position: fixed;
@@ -38,7 +38,7 @@ export const HeaderWrapper = styled('div')`
   box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
 `
 
-export const NavbarContainer = styled('div')`
+export const NavbarContainer = styled.div`
   margin: 0 auto;
   max-width: ${CONTAINER.WIDTH};
   padding: 1rem;

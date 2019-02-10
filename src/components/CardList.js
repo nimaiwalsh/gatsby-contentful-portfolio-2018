@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { CONTAINER, PADDINGS, BREAKPOINTS } from '../utils/theme'
 
@@ -13,7 +13,7 @@ const CardList = (props) => {
 
 export default CardList;
 
-export const CardListWrapper = styled('section')`
+export const CardListWrapper = styled.section`
   margin: 0 auto;
   height: 100%;
   max-width: ${CONTAINER.WIDTH};

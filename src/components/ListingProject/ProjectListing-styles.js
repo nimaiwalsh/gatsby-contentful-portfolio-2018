@@ -1,7 +1,7 @@
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import { COLOURS } from '../../utils/theme'
 
-export const ProjectContainer = styled('div')`
+export const ProjectContainer = styled.div`
   margin-bottom: 4rem;
   display: flex;
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { COLOURS } from '../utils/theme'
 
-const Card = ({ slug, title, author, createdAt, summary, ...props }) => {
+const Card = ({ slug, title, author, summary, ...props }) => {
   const { excerpt } = summary.childMarkdownRemark
   const linkPath = (props.bookReview) ? '/bookreviews/' : 'blog'
 
@@ -21,7 +21,7 @@ const Card = ({ slug, title, author, createdAt, summary, ...props }) => {
 
 export default Card;
 
-const CardWrapper = styled('div')`
+const CardWrapper = styled.div`
   background-color: #fff;
   box-shadow: 0 3px 5px 0 rgba(0, 1, 1, 0.1);
   background-color: #fff;
@@ -31,10 +31,10 @@ const CardWrapper = styled('div')`
     text-decoration: none;
   }
 `
-const Title = styled('h4')`
-  margin-top: 0
+const Title = styled.h4`
+  margin-top: 0;
 `
-const Author = styled('div')`
+const Author = styled.div`
 `
-const Summary = styled('div')`
+const Summary = styled.div`
 `

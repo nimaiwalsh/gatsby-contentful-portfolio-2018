@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["react", "emotion"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "strict": 0,
+    "emotion/no-vanilla": "error",
+    "emotion/styled-import": "error",
+    "react/prop-types": 0
+  }
+}

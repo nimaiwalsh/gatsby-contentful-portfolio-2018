@@ -4,11 +4,11 @@
   "version": "1.0.0",
   "author": "Nimai Walsh <nimai.walsh@gmail.com>",
   "dependencies": {
-    "emotion": "^9.2.10",
-    "emotion-server": "^9.2.10",
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
     "gatsby": "^2.0.118",
     "gatsby-image": "^2.0.29",
-    "gatsby-plugin-emotion": "^2.0.5",
+    "gatsby-plugin-emotion": "^4.0.3",
     "gatsby-plugin-lodash": "^3.0.4",
     "gatsby-plugin-react-helmet": "^3.0.6",
     "gatsby-plugin-sharp": "^2.0.20",
@@ -24,7 +24,6 @@
     "prop-types": "15.x",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
-    "react-emotion": "^9.2.10",
     "react-google-recaptcha": "1.0.5",
     "react-helmet": "^5.2.0",
     "react-motion": "^0.5.2",
@@ -46,6 +45,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.13.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-emotion": "^10.0.7",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-react": "^7.12.4",
+    "gatsby-plugin-eslint": "^2.0.4",
     "prettier": "^1.16.4"
   }
 }

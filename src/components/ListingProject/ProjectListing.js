@@ -3,7 +3,6 @@ import Img from 'gatsby-image'
 import ProjectContainer from './ProjectListing-styles'
 
 const ProjectListing = ({ project }) => {
-  console.log(project.featureImage)
   return (
     <ProjectContainer>
       <div className="project">

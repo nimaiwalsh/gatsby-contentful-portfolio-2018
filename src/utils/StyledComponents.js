@@ -1,7 +1,7 @@
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import { Link } from 'gatsby' 
 
-export const Section = styled('section')`
+export const Section = styled.section`
   padding-bottom: 1rem;
 `
 

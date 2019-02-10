@@ -1,7 +1,7 @@
-import { css } from 'react-emotion'
+import { css } from '@emotion/core'
 import { CONTAINER, COLOURS } from '../../utils/theme'
 
-export const styles = css`
+const styles = css`
   padding: 2rem 0;
   background-color: #111;
   display: flex;

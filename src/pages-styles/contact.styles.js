@@ -1,6 +1,6 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
-const FormContainer = styled('div')`
+const FormContainer = styled.div`
 
   input, textarea {
     display: block;

@@ -4,7 +4,7 @@ import styles from './Footer.styles'
 
 const Footer = () => {
   return (
-    <footer className={styles}>
+    <footer css={styles}>
       <div className="container">
         <div className="details">
           <p>&copy; 2018 Nimai Walsh</p>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 
 import Layout from '../components/Layout'
 
@@ -18,7 +19,7 @@ class BookReview extends Component {
     if (!this.props.data) {
       return <article>Loading...</article>
     }
-    console.log(this.props.data)
+
     return (
       <Layout>
         <Link to="/bookreviews">Back</Link>
@@ -47,6 +48,10 @@ class BookReview extends Component {
       </Layout>
     )
   }
+}
+
+BookReview.propTypes = {
+  data: PropTypes.node,
 }
 
 export default BookReview

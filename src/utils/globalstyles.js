@@ -1,8 +1,8 @@
-import { injectGlobal } from 'react-emotion'
+import { css } from '@emotion/core'
 import { COLOURS, MEDIAQUERY } from '../utils/theme'
 
 //Global style and resets
-const globalStyles = injectGlobal`
+const globalStyles = css`
   /*Default font set at 20px for Typography*/
   /*20/16 = 125%*/
   html {
