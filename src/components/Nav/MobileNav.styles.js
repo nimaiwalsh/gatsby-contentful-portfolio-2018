@@ -7,12 +7,8 @@ export const NavigationBackground = styled.div`
   border-radius: 50%;
   background-color: ${COLOURS.primary};
   position: fixed;
-  top: 1rem;
+  top: 1.2em;
   right: 1.5rem;
-  background-image: radial-gradient(
-    ${COLOURS.primary},
-    black
-  );
   z-index: 1000;
 
   /*ANIMATION EFFECT*/
@@ -20,10 +16,9 @@ export const NavigationBackground = styled.div`
   transform: ${props => props.navOpen && 'scale(100)'};
 `
 
-export const BurgerMenuIcon = styled('span')`
+export const BurgerMenuIcon = styled.span`
   position: relative;
   cursor: pointer;
-
   &,
   &::before,
   &::after {
@@ -67,7 +62,7 @@ export const NavigationButton = styled.div`
   height: 2.5rem;
   width: 2.5rem;
   position: fixed;
-  top: .5rem;
+  top: .9rem;
   right: 1rem;
   border-radius: 50%;
   z-index: 3000;
@@ -79,7 +74,7 @@ export const NavigationButton = styled.div`
   justify-content: center;
 `
 
-export const Nav = styled('nav')`
+export const Nav = styled.nav`
   height: 100vh;
   position: fixed;
   top: 0;
