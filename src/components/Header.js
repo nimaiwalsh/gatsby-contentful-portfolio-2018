@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 
 import { CONTAINER, COLOURS } from '../utils/theme'
-import { Mobile, Default } from '../utils/responsive-components'
+import { Phone, Default } from '../utils/responsive-components'
 import MainNav from './Nav/MainNav'
 import MobileNav from './Nav/MobileNav'
 import logo from '../images/nimaiwalsh-logo.svg'
@@ -19,9 +19,9 @@ export default class Header extends Component {
           <Default>
             <MainNav />
           </Default>
-          <Mobile>
+          <Phone>
             <MobileNav />
-          </Mobile>
+          </Phone>
         </NavbarContainer>
       </HeaderWrapper>
     )

@@ -8,6 +8,10 @@ const globalStyles = css`
   html {
     font-size: 125%;
 
+    ${MEDIAQUERY.tabletLand} {
+      font-size: 115%; 
+    }
+
     ${MEDIAQUERY.tabletPort} {
       font-size: 100%; 
     }

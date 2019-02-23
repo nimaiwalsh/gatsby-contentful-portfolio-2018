@@ -108,7 +108,7 @@ export const Nav = styled.nav`
       font-size: 2rem;
       font-weight: 300;
       padding: 1rem 2rem;
-      color: ${COLOURS.secondary};
+      color: ${COLOURS.secondaryHighlight};
       text-decoration: none;
       text-transform: uppercase;
 

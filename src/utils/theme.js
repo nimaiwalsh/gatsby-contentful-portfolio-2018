@@ -27,11 +27,11 @@ export const PADDINGS = {
 }
 
 export const BREAKPOINTS = {
-  DESKTOP: '992px',
-  TABLETMIN: '768px',
-  TABLETMAX: '991px',
-  MOBILE: '767px',
-  DEFAULT: '768px',
+  DESKTOP: '1800px',
+  TABLETLAND: '1200px',
+  TABLETPORT: '900px',
+  PHONE: '600px',
+  DEFAULT: '601px',
 }
 
 export const MEDIAQUERY = {
@@ -47,8 +47,8 @@ export const MEDIAQUERY = {
   // Order of applying media queries
   // Base/Global + tyography > General Layout + grid > page layout > components
 
-  bigDesktop: '@media (min-width: 112.5em)', //1800px
-  tabletLand: '@media (max-width: 75em)', //1200px
-  tabletPort: '@media (max-width: 56.25em)', //900px 900/16
-  phone: '@media (max-width: 37.5em)', //600px 600/16
+  bigDesktop: '@media (min-width: 90em)', //1800px
+  tabletLand: '@media (max-width: 60em)', //1200px 
+  tabletPort: '@media (max-width: 45em)', //900px 900/20
+  phone: '@media (max-width: 30em)', //600px 600/20
 }

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { COLOURS } from '../utils/theme';
+import { COLOURS, MEDIAQUERY } from '../utils/theme';
 
 const FormContainer = styled.div`
 
@@ -7,7 +7,15 @@ const FormContainer = styled.div`
   justify-content: center;
 
   form {
-    width: 50%;
+    width: 70%;
+
+    ${MEDIAQUERY.tabletPort} {
+      width: 80%;
+    }
+
+    ${MEDIAQUERY.phone} {
+      width: 100%;
+    }
   }
 
   input, textarea {

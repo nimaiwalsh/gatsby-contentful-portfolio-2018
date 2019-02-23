@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { CONTAINER, PADDINGS, BREAKPOINTS } from '../utils/theme'
+import { CONTAINER, PADDINGS, MEDIAQUERY } from '../utils/theme'
 
 const CardList = (props) => {
   return (
@@ -22,11 +22,11 @@ export const CardListWrapper = styled.section`
   grid-gap: ${PADDINGS.M};
   grid-template-columns: 1fr 1fr 1fr;
 
-  @media (max-width: ${BREAKPOINTS.TABLETMAX}) {
+  ${MEDIAQUERY.tabletLand} {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (max-width: ${BREAKPOINTS.MOBILE}) {
+  ${MEDIAQUERY.tabletPort} {
     grid-template-columns: 1fr;
   }
 `;

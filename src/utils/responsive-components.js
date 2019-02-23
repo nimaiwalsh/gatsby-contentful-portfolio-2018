@@ -1,9 +1,13 @@
 import React from 'react'
 import Responsive from 'react-responsive'
+import { BREAKPOINTS } from './theme'
+
+// Wrapper components used to display componenets at breakpoints
 
 export const Desktop = props => <Responsive {...props} minWidth={992} />
 export const Tablet = props => (
-  <Responsive {...props} minWidth={768} maxWidth={991} />
+  <Responsive {...props} minWidth={BREAKPOINTS.DEFAULT} maxWidth={991} />
 )
-export const Mobile = props => <Responsive {...props} maxWidth={767} />
-export const Default = props => <Responsive {...props} minWidth={768} />
+export const Phone = props => <Responsive {...props} maxWidth={BREAKPOINTS.PHONE} />
+export const Default = props => <Responsive {...props} minWidth={BREAKPOINTS.DEFAULT} />
+
