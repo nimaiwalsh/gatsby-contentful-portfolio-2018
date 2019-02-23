@@ -9,6 +9,7 @@ import {
   Author,
 } from './QuoteListing-styles'
 import SocialMediaShare from './SocialMediaShare'
+
 class QuoteListing extends Component {
   constructor(props) {
     super(props)

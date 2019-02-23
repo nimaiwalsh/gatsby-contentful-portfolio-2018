@@ -31,17 +31,17 @@ const Layout = ({ children }) => (
       <LayoutWrapper>
         <Global styles={globalStyles} />
         <Helmet
-          title="Nimai Walsh - Web Developer"
+          title="Nimai Walsh"
           meta={[
             {
               name: 'description',
               content:
-                'Discover the Portfolio and Blog of Nimai Walsh. Nimai is a Web Developer from Brisbane, Australia specialising in HTML, CSS, JavaScript, React and Redux',
+                'Discover the personal web space of Nimai Walsh. Nimai is a Web Developer, traveler, writer and student from Brisbane, Australia specialising in HTML, CSS, JavaScript, React and Redux',
             },
             {
               name: 'keywords',
               content:
-                'react, redux, html, css, javascript, web, web developer, developer, front-end, gatsby',
+                'self improvement, travel, react, redux, html, css, javascript, web, web developer, developer, front-end, gatsby',
             },
           ]}
         />
@@ -68,7 +68,7 @@ const LayoutWrapper = styled.div`
 const ContentWrapper = styled('main')`
   margin: 0 auto;
   height: 100%;
-  min-height: 50rem;
+  min-height: 35rem;
   max-width: ${CONTAINER.WIDTH};
   padding: 0 1rem;
 

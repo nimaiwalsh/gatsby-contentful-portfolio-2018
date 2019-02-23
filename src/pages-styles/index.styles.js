@@ -54,7 +54,7 @@ const fadein = keyframes`
 
 export const HeaderContent = styled.div`
   max-width: ${CONTAINER.WIDTH};
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1.5rem;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -66,15 +66,15 @@ export const HeaderContent = styled.div`
   span {
     opacity: 0;
     animation: ${fadein} 3s ease both;
-    animation-delay: 1s;
+    animation-delay: 1.5s;
   }
 
   h1 {
     font-weight: 600;
-    text-transform: uppercase;
+    margin-top: 0;
     opacity: 0;
     animation: ${fadein} 3s ease both;
-    animation-delay: 1.5s;
-    color: ${COLOURS.secondary};
+    animation-delay: 1s;
+    color: ${COLOURS.secondaryHighlight};
   }
 `;

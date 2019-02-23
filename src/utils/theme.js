@@ -42,9 +42,9 @@ export const MEDIAQUERY = {
   //1800px +: Big desktop
 
   //em are better than rem's in Media Queries - more stable. 
-  //1em = 16px
+  //1em = 20px - Default font size is set at 20px from Typography Sutro Theme
 
-  //Order of applying media queries
+  // Order of applying media queries
   // Base/Global + tyography > General Layout + grid > page layout > components
 
   bigDesktop: '@media (min-width: 112.5em)', //1800px

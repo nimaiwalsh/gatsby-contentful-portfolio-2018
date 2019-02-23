@@ -53,7 +53,7 @@ export const BurgerMenuIcon = styled.span`
     transform: ${props => props.navOpen && 'rotate(-135deg)'};
   }
   &::after {
-    transform: ${props => props.navOpen && 'rotate(135deg)'};
+    transform: ${props => props.navOpen && 'rotate(135deg)'}
   }
 `
 
@@ -94,6 +94,7 @@ export const Nav = styled.nav`
     list-style: none;
     text-align: center;
     width: 100%;
+    margin-left: 0;
   }
 
   & .item {

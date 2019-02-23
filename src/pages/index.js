@@ -29,8 +29,8 @@ const IndexPage = ({ data }) => {
         </BackgroundImage>
         <HeaderContent>
           <div>
-            <span>Hello beautiful earth</span>
-            <h1>Nimai Walsh - Web Developer</h1>
+            <h1>Nimai Walsh</h1>
+            <span>Welcome to my personal web presence. I am a Web Developer, Traveller and student of life.</span>
           </div>
         </HeaderContent>
       </HeroSection>

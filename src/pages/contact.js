@@ -4,7 +4,8 @@ import Recaptcha from 'react-google-recaptcha'
 
 import Layout from '../components/Layout'
 import FadeInUp from '../components/FadeInUp'
-import FormContainer from '../pages-styles/contact.styles'
+import FormContainer, { SubmitButton, RecaptchaBox } from '../pages-styles/contact.styles'
+import { Section } from '../utils/StyledComponents'
 
 const RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 
@@ -54,7 +55,7 @@ export default class Contact extends Component {
     return (
       <Layout>
         <FadeInUp>
-          <section>
+          <Section>
             <h1>Contact me</h1>
             <FormContainer>
               <form
@@ -99,18 +100,20 @@ export default class Contact extends Component {
                   onChange={this.handleChange}
                   className="input-message"
                 />
-                <Recaptcha
-                  // eslint-disable-next-line react/no-string-refs
-                  ref="recaptcha"
-                  sitekey={RECAPTCHA_KEY}
-                  onChange={this.handleRecaptcha}
-                />
-                <button type="submit" className="button-submit">
+                <RecaptchaBox>
+                  <Recaptcha
+                    // eslint-disable-next-line react/no-string-refs
+                    ref="recaptcha"
+                    sitekey={RECAPTCHA_KEY}
+                    onChange={this.handleRecaptcha}
+                  />
+                </RecaptchaBox>
+                <SubmitButton type="submit" className="button-submit">
                   Submit
-                </button>
+                </SubmitButton>
               </form>
             </FormContainer>
-          </section>
+          </Section>
         </FadeInUp>
       </Layout>
     )
