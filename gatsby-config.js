@@ -78,6 +78,15 @@ module.exports = {
           failOnError: false
         }
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `tomato`,
+        // enable the loading spinner.
+        showSpinner: true,
+      },
+    }, 
   ],
 };
