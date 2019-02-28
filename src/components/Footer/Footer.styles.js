@@ -9,6 +9,7 @@ const styles = css`
   font-size: 0.7rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  margin-top: 6rem;
 
   & .container {
     padding: ${CONTAINER.PADDING};
