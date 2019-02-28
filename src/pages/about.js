@@ -8,7 +8,7 @@ export default class About extends Component {
     return (
       <Layout>
         <FadeInUp>
-          <div>
+          <section>
             <h1>About me</h1>
             <p>
               I am an adaptable professional and an exceptional team player with
@@ -44,7 +44,7 @@ export default class About extends Component {
               and work hard for the success of the group. I believe in fairness,
               kindness and forgiveness when working with others.
             </p>
-          </div>
+          </section>
         </FadeInUp>
       </Layout>
     )

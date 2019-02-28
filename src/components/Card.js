@@ -4,20 +4,48 @@ import styled from '@emotion/styled';
 
 import { COLOURS } from '../utils/theme'
 
-const Card = ({ slug, title, author, summary, ...props }) => {
-  const { excerpt } = summary.childMarkdownRemark
-  const linkPath = (props.bookReview) ? '/bookreviews/' : 'blog'
+class Card extends React.Component {
+  
+  bookCard = ({ slug, title, author, summary }) => {
+    const { excerpt } = summary.childMarkdownRemark
+  
+    return (
+      <Link to={`/bookreviews/${slug}`}>
+      <CardWrapper>
+        <Title>{title}</Title>
+        <Author>{author}</Author>
+        <Summary>{excerpt}</Summary>
+      </CardWrapper>
+      </Link>
+    );
+  };
+  
+  blogPostCard = ({ slug, title, body, tags, createdAt }) => {
+    const { excerpt } = body.childMarkdownRemark
+  
+    return (
+      <Link to={`/blog/${slug}`}>
+      <CardWrapper>
+        <Title>{title}</Title>
+        <div>{createdAt}</div>
+        <Summary>{excerpt}</Summary>
+        <div>{tags}</div>
+      </CardWrapper>
+      </Link>
+    );
+  };
 
-  return (
-    <Link to={`${linkPath}${slug}`}>
-    <CardWrapper>
-      <Title>{title}</Title>
-      <Author>{author}</Author>
-      <Summary>{excerpt}</Summary>
-    </CardWrapper>
-    </Link>
-  );
-};
+  render() {
+    if (this.props.bookReview) {
+      return this.bookCard({ ...this.props })
+    }
+
+    if (this.props.blogPost) {
+      return this.blogPostCard({ ...this.props })
+    }
+  }
+
+}
 
 export default Card;
 

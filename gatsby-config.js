@@ -7,8 +7,8 @@ require('dotenv').config({path: `./.env.${env}`});
 // Plugin Configurations
 module.exports = {
   siteMetadata: {
-    title: 'Nimai Walsh - Web Developer',
-    desc: 'Portfolio and Blog for Nimai Walsh - Web Developer',
+    title: 'Nimai Walsh',
+    desc: 'Welcome to Nimai Walsh\'s portoflio, blog and general web presence. Nimai is a Web Developer, Traveler and fulltime student of life.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

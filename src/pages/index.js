@@ -16,6 +16,7 @@ import {
 
 const IndexPage = ({ data }) => {
   const bookReviews = data.allContentfulBookReview.edges
+  const blogPosts = data.allContentfulBlogPost.edges
 
   return (
     <Layout>
@@ -30,7 +31,10 @@ const IndexPage = ({ data }) => {
         <HeaderContent>
           <div>
             <h1>Nimai Walsh</h1>
-            <span>Welcome to my personal web presence. I am a Web Developer, Traveller and student of life.</span>
+            <span>
+              Welcome to my personal web presence. I am a Web Developer,
+              Traveller and student of life.
+            </span>
           </div>
         </HeaderContent>
       </HeroSection>
@@ -43,13 +47,17 @@ const IndexPage = ({ data }) => {
           <Section>
             <h2>Recent books</h2>
             <CardList>
-              {bookReviews.map(({ node }) => <Card key={node.id} {...node} bookReview />)}
+              {bookReviews.map(({ node }) => (
+                <Card key={node.id} {...node} bookReview />
+              ))}
             </CardList>
           </Section>
           <Section>
             <h2>Recent posts</h2>
             <CardList>
-              {bookReviews.map(({ node }) => <Card key={node.id} {...node} bookReview />)}
+              {blogPosts.map(({ node }) => (
+                <Card key={node.id} {...node} blogPost />
+              ))}
             </CardList>
           </Section>
         </div>
@@ -101,6 +109,22 @@ export const query = graphql`
               excerpt
             }
           }
+        }
+      }
+    }
+    allContentfulBlogPost(sort: { fields: createdAt, order: DESC }, limit: 3) {
+      edges {
+        node {
+          id
+          createdAt(formatString: "DD MMM YYYY")
+          title
+          slug
+          body {
+            childMarkdownRemark {
+              excerpt(truncate: true)
+            }
+          }
+          tags
         }
       }
     }
