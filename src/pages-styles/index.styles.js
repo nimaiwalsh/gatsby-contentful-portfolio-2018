@@ -12,7 +12,7 @@ export const HeroSection = styled.section`
   margin-right: -50vw;
   /*-----*/
   overflow: hidden;
-  height: 20rem;
+  height: 30rem;
 `;
 
 export const BackgroundImage = styled.div`
