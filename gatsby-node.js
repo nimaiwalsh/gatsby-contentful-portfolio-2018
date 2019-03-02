@@ -46,7 +46,8 @@ exports.createPages = ({ graphql, actions }) => {
             limit: postsPerPage,
             skip: i * postsPerPage,
             numBookreviewPages,
-            currentPage: i + 1
+            currentPage: i + 1,
+            slug: 'bookreviews',
           }
         })
       })
@@ -62,6 +63,21 @@ exports.createPages = ({ graphql, actions }) => {
             slug: edge.node.slug,
           },
         });
+      })
+
+      // create Bookreview page list with pagination
+      Array.from({ length: numBlogPages }).forEach((_, i) => {
+        createPage({
+          path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+          component: path.resolve("./src/templates/blog-list-template.js"),
+          context: {
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numBlogPages,
+            currentPage: i + 1,
+            slug: 'blog',
+          }
+        })
       })
 
       // Create individual Blog post pages

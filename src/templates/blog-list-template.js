@@ -4,52 +4,50 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import FadeInUp from '../components/FadeInUp'
 import { PageWrapper, Section } from '../components/styles/StyledComponents'
-import BookListing from '../components/BookListing'
+import PostListing from '../components/PostListing'
 import Pagination from '../components/Pagination'
 
-const BookReviews = ({ data, pageContext }) => {
-
+const Blog = ({ data, pageContext }) => {
   return (
     <Layout>
       <FadeInUp>
         <PageWrapper>
           <Section>
-            <h1>Book reviews</h1>
-            {data.allContentfulBookReview.edges.map(({node}) => (
-              <BookListing book={node} key={node.id}/>
+            <h1>Blog</h1>
+            {data.allContentfulBlogPost.edges.map(({ node }) => (
+              <PostListing post={node} key={node.id} />
             ))}
-            
-            <Pagination pageContext={pageContext}/>
           </Section>
+          <Pagination pageContext={ pageContext } />
         </PageWrapper>
       </FadeInUp>
     </Layout>
   )
 }
 
-export default BookReviews
+export default Blog
 
 export const query = graphql`
-  query BookReviewList($skip: Int!, $limit: Int!) {
-    allContentfulBookReview(
-      sort: { fields: [createdAt], order: DESC },
-      limit: $limit
-      skip: $skip
+  query PostList2($skip: Int!, $limit: Int!) {
+    allContentfulBlogPost(
+      sort: { fields: [createdAt], order: DESC }
+      limit: $limit,
+      skip: $skip,
     ) {
+      totalCount
       edges {
         node {
           id
           createdAt(formatString: "DD MMM YYYY")
           title
           slug
-          author
-          summary {
+          body {
             childMarkdownRemark {
               excerpt
             }
           }
         }
       }
-	  }
+    }
   }
 `

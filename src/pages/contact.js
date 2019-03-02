@@ -4,8 +4,8 @@ import Recaptcha from 'react-google-recaptcha'
 
 import Layout from '../components/Layout'
 import FadeInUp from '../components/FadeInUp'
-import FormContainer, { SubmitButton, RecaptchaBox } from '../pages-styles/contact.styles'
-import { Section } from '../utils/StyledComponents'
+import FormContainer, { RecaptchaBox } from '../pages-styles/contact.styles'
+import { PageWrapper, Section, Button } from '../components/styles/StyledComponents'
 
 const RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 
@@ -55,65 +55,67 @@ export default class Contact extends Component {
     return (
       <Layout>
         <FadeInUp>
-          <Section>
-            <h1>Contact me</h1>
-            <FormContainer>
-              <form
-                name="contact"
-                method="post"
-                action="/contact-form-success/"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                data-netlify-recaptcha="true"
-                onSubmit={this.handleSubmit}
-              >
-                {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                <input type="hidden" name="form-name" value="contact" />
-                <label hidden>
-                  Don’t fill this out:{' '}
-                  <input name="bot-field" onChange={this.handleChange} />
-                </label>
+          <PageWrapper>
+            <Section>
+              <h1>Contact me</h1>
+              <FormContainer>
+                <form
+                  name="contact"
+                  method="post"
+                  action="/contact-form-success/"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  data-netlify-recaptcha="true"
+                  onSubmit={this.handleSubmit}
+                >
+                  {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                  <input type="hidden" name="form-name" value="contact" />
+                  <label hidden>
+                    Don’t fill this out:{' '}
+                    <input name="bot-field" onChange={this.handleChange} />
+                  </label>
 
-                <label>Name (optional)</label>
-                <input
-                  name="name"
-                  type="text"
-                  value={name}
-                  onChange={this.handleChange}
-                  className="input-name"
-                />
-                <label>Email</label>
-                <input
-                  required
-                  name="email"
-                  type="email"
-                  value={email}
-                  onChange={this.handleChange}
-                  className="input-email"
-                />
-                <label>Message</label>
-                <textarea
-                  required
-                  name="message"
-                  type="text"
-                  value={message}
-                  onChange={this.handleChange}
-                  className="input-message"
-                />
-                <RecaptchaBox>
-                  <Recaptcha
-                    // eslint-disable-next-line react/no-string-refs
-                    ref="recaptcha"
-                    sitekey={RECAPTCHA_KEY}
-                    onChange={this.handleRecaptcha}
+                  <label>Name (optional)</label>
+                  <input
+                    name="name"
+                    type="text"
+                    value={name}
+                    onChange={this.handleChange}
+                    className="input-name"
                   />
-                </RecaptchaBox>
-                <SubmitButton type="submit" className="button-submit">
-                  Submit
-                </SubmitButton>
-              </form>
-            </FormContainer>
-          </Section>
+                  <label>Email</label>
+                  <input
+                    required
+                    name="email"
+                    type="email"
+                    value={email}
+                    onChange={this.handleChange}
+                    className="input-email"
+                  />
+                  <label>Message</label>
+                  <textarea
+                    required
+                    name="message"
+                    type="text"
+                    value={message}
+                    onChange={this.handleChange}
+                    className="input-message"
+                  />
+                  <RecaptchaBox>
+                    <Recaptcha
+                      // eslint-disable-next-line react/no-string-refs
+                      ref="recaptcha"
+                      sitekey={RECAPTCHA_KEY}
+                      onChange={this.handleRecaptcha}
+                    />
+                  </RecaptchaBox>
+                  <Button type="submit" width={'100%'}>
+                    Submit
+                  </Button>
+                </form>
+              </FormContainer>
+            </Section>
+          </PageWrapper>
         </FadeInUp>
       </Layout>
     )

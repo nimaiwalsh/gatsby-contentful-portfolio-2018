@@ -3,6 +3,8 @@ import { Link, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/Layout'
+import FadeInUp from '../components/FadeInUp'
+import { PageWrapper } from '../components/styles/StyledComponents'
 
 class BookReview extends Component {
   render() {
@@ -22,29 +24,38 @@ class BookReview extends Component {
 
     return (
       <Layout>
-        <Link to="/bookreviews">Back</Link>
-        <article>
-          <img alt="book cover" src={`https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`} />
-          <h1>{title}</h1>
-          <h2>Auhor: {author}</h2>
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            View on amazon
-          </a>
+        <FadeInUp>
+          <PageWrapper>
+            <Link to="/bookreviews">Back</Link>
+            <article>
+              <img
+                alt="book cover"
+                src={`https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`}
+              />
+              <h1>{title}</h1>
+              <h2>Auhor: {author}</h2>
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                View on amazon
+              </a>
 
-          <h3>Summary</h3>
-          <div>{summary.summary}</div>
+              <h3>Summary</h3>
+              <div>{summary.summary}</div>
 
-          <h3>Notes</h3>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: body.childMarkdownRemark.html,
-            }}
-          />
+              <h3>Notes</h3>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: body.childMarkdownRemark.html,
+                }}
+              />
 
-          <div>
-            <p>Posted with love on{' '}<time>{createdAt}</time></p>
-          </div>
-        </article>
+              <div>
+                <p>
+                  Posted with love on <time>{createdAt}</time>
+                </p>
+              </div>
+            </article>
+          </PageWrapper>
+        </FadeInUp>
       </Layout>
     )
   }

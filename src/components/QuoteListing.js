@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
 
 import SocialMediaShare from './SocialMediaShare'
+import { Button } from '../components/styles/StyledComponents'
 
 class QuoteListing extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class QuoteListing extends Component {
 
     return (
       <Container>
-        <Button onClick={this.nextQuote}>New Quote</Button>
+        <Button onClick={this.nextQuote} width={'auto'}>Inspire me witha new quote</Button>
         <QuoteContainer>
           <BlockQuote key={quoteRef}>
             <Quote>{quote}</Quote>
@@ -72,9 +73,7 @@ const fadeIn = keyframes`
 export const Container = styled.div`
   text-align: center;
   height: auto;
-`
-export const Button = styled.button`
-  text-align: center;
+  padding-top: 3.56rem;
 `
 
 export const QuoteContainer = styled.section`

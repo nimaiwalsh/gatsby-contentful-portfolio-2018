@@ -7,7 +7,7 @@ import { Global } from '@emotion/core'
 
 import { CONTAINER } from '../utils/theme'
 import Header from './Header'
-import Footer from './Footer/Footer'
+import Footer from './Footer'
 
 // eslint-disable-next-line
 import globalStyles from '../utils/globalstyles'
@@ -63,14 +63,21 @@ const LayoutWrapper = styled.div`
   position: relative;
   /* Padding same width as fixed Header */
   padding-top: 72px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 100vh;
 `
 
 const ContentWrapper = styled('main')`
-  margin: 0 auto;
+  display: block;
   height: 100%;
+  width: 100%;
+  margin: 0 auto;
   min-height: 35rem;
   max-width: ${CONTAINER.WIDTH};
   padding: 0 1rem;
+  flex: 1 1 auto;
 
   ul, ol {
     margin-left: 1.78rem;

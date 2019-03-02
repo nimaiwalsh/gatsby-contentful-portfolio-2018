@@ -7,7 +7,7 @@ import FadeInUp from '../components/FadeInUp'
 import QuoteListing from '../components/QuoteListing'
 import CardList from '../components/CardList'
 import Card from '../components/Card'
-import { Section } from '../utils/StyledComponents'
+import { PageWrapper, Section } from '../components/styles/StyledComponents'
 import {
   HeroSection,
   BackgroundImage,
@@ -20,48 +20,49 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <HeroSection>
-        <BackgroundImage>
-          <Img
-            className="header-image"
-            fluid={data.headerImage.childImageSharp.fluid}
-          />
-          <div className="header-image-overlay" />
-        </BackgroundImage>
-        <HeaderContent>
+      <PageWrapper>
+        <HeroSection>
+          <BackgroundImage>
+            <Img
+              className="header-image"
+              fluid={data.headerImage.childImageSharp.fluid}
+            />
+            <div className="header-image-overlay" />
+          </BackgroundImage>
+          <HeaderContent>
+            <div>
+              <h1>Nimai Walsh</h1>
+              <span>
+                Welcome to my personal web presence. I am a Web Developer,
+                Traveller and student of life.
+              </span>
+            </div>
+          </HeaderContent>
+        </HeroSection>
+        <FadeInUp>
           <div>
-            <h1>Nimai Walsh</h1>
-            <span>
-              Welcome to my personal web presence. I am a Web Developer,
-              Traveller and student of life.
-            </span>
+            <Section>
+              <QuoteListing quotes={data.allContentfulQuotes.edges} />
+            </Section>
+            <Section>
+              <h2>Recent books</h2>
+              <CardList>
+                {bookReviews.map(({ node }) => (
+                  <Card key={node.id} {...node} bookReview />
+                ))}
+              </CardList>
+            </Section>
+            <Section>
+              <h2>Recent posts</h2>
+              <CardList>
+                {blogPosts.map(({ node }) => (
+                  <Card key={node.id} {...node} blogPost />
+                ))}
+              </CardList>
+            </Section>
           </div>
-        </HeaderContent>
-      </HeroSection>
-      <FadeInUp>
-        <div>
-          <Section>
-            <h2>Inspirational quotes</h2>
-            <QuoteListing quotes={data.allContentfulQuotes.edges} />
-          </Section>
-          <Section>
-            <h2>Recent books</h2>
-            <CardList>
-              {bookReviews.map(({ node }) => (
-                <Card key={node.id} {...node} bookReview />
-              ))}
-            </CardList>
-          </Section>
-          <Section>
-            <h2>Recent posts</h2>
-            <CardList>
-              {blogPosts.map(({ node }) => (
-                <Card key={node.id} {...node} blogPost />
-              ))}
-            </CardList>
-          </Section>
-        </div>
-      </FadeInUp>
+        </FadeInUp>
+      </PageWrapper>
     </Layout>
   )
 }

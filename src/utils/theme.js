@@ -10,6 +10,7 @@ export const COLOURS = {
   secondaryHighlight: '#F7B733',
 
   grey: '#DFDCE3',
+  darkGrey: '#919092',
 
   white: '#FFF',
   whiteRGB: '255, 255, 255',

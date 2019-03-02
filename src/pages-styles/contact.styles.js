@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
-import { COLOURS, MEDIAQUERY } from '../utils/theme';
+import { MEDIAQUERY } from '../utils/theme';
 
 const FormContainer = styled.div`
-
   display: flex;
   justify-content: center;
 
@@ -32,20 +31,6 @@ const FormContainer = styled.div`
 export const RecaptchaBox = styled.div`
   display: flex;
   justify-content: center;
-`
-
-export const SubmitButton = styled.button`
-  margin-top: 1rem;
-  padding: .5rem;
-  width: 100%;
-  border: none;
-  background-color: ${COLOURS.secondary};
-  color: ${COLOURS.white};
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 0.8rem;
 `
 
 export default FormContainer

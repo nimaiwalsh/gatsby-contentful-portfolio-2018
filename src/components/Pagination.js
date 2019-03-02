@@ -1,13 +1,16 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { ButtonNext, ButtonPrevious } from '../utils/StyledComponents' 
+import { ButtonNext, ButtonPrevious } from '../components/styles/StyledComponents'
 
 const Pagination = ({ pageContext }) => {
 
-  const { currentPage, numBookreviewPages } = pageContext
+  const pageNumbers = pageContext.numBookreviewPages ? pageContext.numBookreviewPages : pageContext.numBlogPages
+  const path = pageContext.slug
+
+  const { currentPage } = pageContext
   const isFirst = currentPage === 1
-  const isLast = currentPage === numBookreviewPages
+  const isLast = currentPage === pageNumbers
   const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString()
   const nextPage = (currentPage + 1).toString()
 
@@ -23,10 +26,10 @@ const Pagination = ({ pageContext }) => {
         <ButtonNext to={`bookreviews/${nextPage}`}>Next Page →</ButtonNext>
       )}
 
-      {Array.from({ length: numBookreviewPages }, (_, i) => (
+      {Array.from({ length: pageNumbers }, (_, i) => (
         <Link
           key={`pagination-number${i + 1}`}
-          to={`/bookreviews/${i === 0 ? '' : i + 1}`}
+          to={`/${path}/${i === 0 ? '' : i + 1}`}
         >
           {i + 1}
         </Link>
