@@ -34,10 +34,9 @@ const IndexPage = ({ data }) => {
               </h1>
               <div className="w-16 h-1 bg-secondary my-6" />
               <p
-                className="text-lg md:text-xl text-white/85 max-w-xl leading-relaxed mb-8"
+                className="text-xl md:text-2xl text-white/90 max-w-xl leading-relaxed mb-8 font-light"
               >
-                Welcome to my personal web presence. I am a Web Developer,
-                Traveller and student of life.
+                Father, investor, and Android mobile developer. Here I write about tech, the books I'm reading, and ideas worth sharing.
               </p>
               <div
                 className="flex gap-4"
