@@ -4,15 +4,11 @@
   "version": "1.0.0",
   "author": "Nimai Walsh <nimai.walsh@gmail.com>",
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
     "gatsby": "^5.16.1",
-    "gatsby-plugin-emotion": "^8.16.0",
     "gatsby-plugin-image": "^3.16.0",
     "gatsby-plugin-lodash": "^6.16.0",
     "gatsby-plugin-nprogress": "^5.16.0",
     "gatsby-plugin-sharp": "^5.16.0",
-    "gatsby-plugin-typography": "^5.16.0",
     "gatsby-remark-images-contentful": "^6.16.0",
     "gatsby-remark-prismjs": "^7.16.0",
     "gatsby-source-contentful": "^8.16.0",
@@ -25,12 +21,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-google-recaptcha": "^3.1.0",
-    "react-responsive": "^10.0.0",
-    "react-share": "^5.1.0",
-    "react-typography": "^0.16.23",
-    "redux-thunk": "^3.1.0",
-    "typography": "^0.16.24",
-    "typography-theme-sutro": "^0.16.19"
+    "react-share": "^5.1.0"
   },
   "keywords": [
     "gatsby"
@@ -47,10 +38,15 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.25.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.24",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react": "^7.37.0",
     "gatsby-plugin-eslint": "^4.0.1",
-    "prettier": "^3.5.0"
+    "gatsby-plugin-postcss": "^6.16.0",
+    "postcss": "^8.5.6",
+    "prettier": "^3.5.0",
+    "tailwindcss": "^3.4.19"
   }
 }

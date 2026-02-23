@@ -4,8 +4,7 @@ import Recaptcha from 'react-google-recaptcha'
 
 import Layout from '../components/Layout'
 import FadeInUp from '../components/FadeInUp'
-import FormContainer, { RecaptchaBox } from '../pages-styles/contact.styles'
-import { PageWrapper, Section, Button } from '../components/styles/StyledComponents'
+import { Button } from '../components/styles/StyledComponents'
 
 const RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 
@@ -32,7 +31,7 @@ export default class Contact extends Component {
     this.setState({ 'g-recaptcha-response': value })
   }
 
-  /*Netlify  parameters in here that are picked up by the bots for form submission*/
+  /*Netlify parameters in here that are picked up by the bots for form submission*/
   handleSubmit = e => {
     e.preventDefault()
     const form = e.target
@@ -48,18 +47,17 @@ export default class Contact extends Component {
       .catch(err => alert(err))
   }
 
-  // data-netlify-honeypot="bot-field"
-
   render() {
     const { name, email, message } = this.state
     return (
       <Layout>
         <FadeInUp>
-          <PageWrapper>
-            <Section>
+          <div className="w-full">
+            <section className="pb-4 relative">
               <h1>Contact me</h1>
-              <FormContainer>
+              <div className="flex justify-center">
                 <form
+                  className="w-full md:w-4/5 lg:w-[70%]"
                   name="contact"
                   method="post"
                   action="/contact-form-success/"
@@ -71,7 +69,7 @@ export default class Contact extends Component {
                   {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                   <input type="hidden" name="form-name" value="contact" />
                   <label hidden>
-                    Don’t fill this out:{' '}
+                    Don't fill this out:{' '}
                     <input name="bot-field" onChange={this.handleChange} />
                   </label>
 
@@ -81,7 +79,7 @@ export default class Contact extends Component {
                     type="text"
                     value={name}
                     onChange={this.handleChange}
-                    className="input-name"
+                    className="block w-full mb-4 border-0 border-b border-zinc-300 bg-transparent focus:outline-none focus:border-primary"
                   />
                   <label>Email</label>
                   <input
@@ -90,7 +88,7 @@ export default class Contact extends Component {
                     type="email"
                     value={email}
                     onChange={this.handleChange}
-                    className="input-email"
+                    className="block w-full mb-4 border-0 border-b border-zinc-300 bg-transparent focus:outline-none focus:border-primary"
                   />
                   <label>Message</label>
                   <textarea
@@ -99,23 +97,23 @@ export default class Contact extends Component {
                     type="text"
                     value={message}
                     onChange={this.handleChange}
-                    className="input-message"
+                    className="block w-full mb-4 border-0 border-b border-zinc-300 bg-transparent focus:outline-none focus:border-primary h-48"
                   />
-                  <RecaptchaBox>
+                  <div className="flex justify-center mt-4">
                     <Recaptcha
                       // eslint-disable-next-line react/no-string-refs
                       ref="recaptcha"
                       sitekey={RECAPTCHA_KEY}
                       onChange={this.handleRecaptcha}
                     />
-                  </RecaptchaBox>
+                  </div>
                   <Button type="submit" width={'100%'}>
                     Submit
                   </Button>
                 </form>
-              </FormContainer>
-            </Section>
-          </PageWrapper>
+              </div>
+            </section>
+          </div>
         </FadeInUp>
       </Layout>
     )

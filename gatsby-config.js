@@ -12,7 +12,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-image',
-    'gatsby-plugin-emotion',
+    'gatsby-plugin-postcss',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -45,12 +45,6 @@ module.exports = {
       options: {
         spaceId: `${process.env.GATSBY_CONTENTFUL_SPACE_ID}`,
         accessToken: `${process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN}`,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography.js',
       },
     },
     {

@@ -7,12 +7,6 @@ import FadeInUp from '../components/FadeInUp'
 import QuoteListing from '../components/QuoteListing'
 import CardList from '../components/CardList'
 import Card from '../components/Card'
-import { PageWrapper, Section } from '../components/styles/StyledComponents'
-import {
-  HeroSection,
-  BackgroundImage,
-  HeaderContent,
-} from '../pages-styles/index.styles'
 
 const IndexPage = ({ data }) => {
   const bookReviews = data.allContentfulBookReview.edges
@@ -20,50 +14,60 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <PageWrapper>
-        <HeroSection>
-          <BackgroundImage>
+      <div className="w-full">
+        {/* Hero Section — full-width bleed from constrained container */}
+        <section className="relative w-screen -mx-4 overflow-hidden h-[30rem]">
+          <div className="absolute top-0 left-0 w-full h-full">
             <GatsbyImage
-              className="header-image"
+              className="!absolute !top-0 !left-0 !w-full !h-full"
               image={getImage(data.headerImage)}
               alt="hero"
             />
-            <div className="header-image-overlay" />
-          </BackgroundImage>
-          <HeaderContent>
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/90 to-black/80" />
+          </div>
+          <div className="relative z-10 max-w-container mx-auto px-6 h-full flex items-center text-white">
             <div>
-              <h1>Nimai Walsh</h1>
-              <span>
+              <h1
+                className="font-semibold mt-0 text-yellow-300"
+                style={{ animation: 'fadein 3s ease both', animationDelay: '1s', opacity: 0 }}
+              >
+                Nimai Walsh
+              </h1>
+              <span
+                className="block"
+                style={{ animation: 'fadein 3s ease both', animationDelay: '1.5s', opacity: 0 }}
+              >
                 Welcome to my personal web presence. I am a Web Developer,
                 Traveller and student of life.
               </span>
             </div>
-          </HeaderContent>
-        </HeroSection>
+          </div>
+        </section>
+
         <FadeInUp>
           <div>
-            <Section>
+            <section className="pb-4 relative">
               <QuoteListing quotes={data.allContentfulQuotes.edges} />
-            </Section>
-            <Section>
+            </section>
+            <section className="pb-4 relative">
               <h2>Recent books</h2>
               <CardList>
                 {bookReviews.map(({ node }) => (
                   <Card key={node.id} {...node} bookReview />
                 ))}
               </CardList>
-            </Section>
-            <Section>
+            </section>
+            <section className="pb-4 relative">
               <h2>Recent posts</h2>
               <CardList>
                 {blogPosts.map(({ node }) => (
                   <Card key={node.id} {...node} blogPost />
                 ))}
               </CardList>
-            </Section>
+            </section>
           </div>
         </FadeInUp>
-      </PageWrapper>
+      </div>
     </Layout>
   )
 }

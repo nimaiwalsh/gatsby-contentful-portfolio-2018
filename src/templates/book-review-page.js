@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 
 import Layout from '../components/Layout'
 import FadeInUp from '../components/FadeInUp'
-import { PageWrapper } from '../components/styles/StyledComponents'
 
 class BookReview extends Component {
   render() {
@@ -25,15 +24,15 @@ class BookReview extends Component {
     return (
       <Layout>
         <FadeInUp>
-          <PageWrapper>
-            <Link to="/bookreviews">Back</Link>
+          <div className="w-full">
+            <Link to="/bookreviews" className="text-primary hover:underline">Back</Link>
             <article>
               <img
                 alt="book cover"
                 src={`https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`}
               />
               <h1>{title}</h1>
-              <h2>Auhor: {author}</h2>
+              <h2>Author: {author}</h2>
               <a href={link} target="_blank" rel="noopener noreferrer">
                 View on amazon
               </a>
@@ -43,6 +42,7 @@ class BookReview extends Component {
 
               <h3>Notes</h3>
               <div
+                className="prose prose-zinc max-w-none"
                 dangerouslySetInnerHTML={{
                   __html: body.childMarkdownRemark.html,
                 }}
@@ -54,7 +54,7 @@ class BookReview extends Component {
                 </p>
               </div>
             </article>
-          </PageWrapper>
+          </div>
         </FadeInUp>
       </Layout>
     )

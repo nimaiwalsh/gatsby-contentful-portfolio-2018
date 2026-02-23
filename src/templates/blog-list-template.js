@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import FadeInUp from '../components/FadeInUp'
-import { PageWrapper, Section } from '../components/styles/StyledComponents'
 import PostListing from '../components/PostListing'
 import Pagination from '../components/Pagination'
 
@@ -11,15 +10,15 @@ const Blog = ({ data, pageContext }) => {
   return (
     <Layout>
       <FadeInUp>
-        <PageWrapper>
-          <Section>
+        <div className="w-full">
+          <section className="pb-4 relative">
             <h1>Blog</h1>
             {data.allContentfulBlogPost.edges.map(({ node }) => (
               <PostListing post={node} key={node.id} />
             ))}
-          </Section>
-          <Pagination pageContext={ pageContext } />
-        </PageWrapper>
+          </section>
+          <Pagination pageContext={pageContext} />
+        </div>
       </FadeInUp>
     </Layout>
   )

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 
 import Layout from '../components/Layout'
 import FadeInUp from '../components/FadeInUp'
-import { PageWrapper } from '../components/styles/StyledComponents'
 
 class PostPage extends Component {
   render() {
@@ -17,11 +16,12 @@ class PostPage extends Component {
     return (
       <Layout>
         <FadeInUp>
-          <PageWrapper>
-            <Link to="/blog">Back</Link>
+          <div className="w-full">
+            <Link to="/blog" className="text-primary hover:underline">Back</Link>
             <article>
               <h1>{data.contentfulBlogPost.title}</h1>
               <div
+                className="prose prose-zinc max-w-none"
                 dangerouslySetInnerHTML={{
                   __html: data.contentfulBlogPost.body.childMarkdownRemark.html,
                 }}
@@ -33,7 +33,7 @@ class PostPage extends Component {
                 </p>
               </div>
             </article>
-          </PageWrapper>
+          </div>
         </FadeInUp>
       </Layout>
     )

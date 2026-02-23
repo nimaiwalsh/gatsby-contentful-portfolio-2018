@@ -2,15 +2,14 @@ import React, { Component } from 'react'
 
 import Layout from '../components/Layout'
 import FadeInUp from '../components/FadeInUp'
-import { PageWrapper, Section } from '../components/styles/StyledComponents'
 
 export default class About extends Component {
   render() {
     return (
       <Layout>
         <FadeInUp>
-          <PageWrapper>
-            <Section>
+          <div className="w-full">
+            <section className="pb-4 relative">
               <h1>About me</h1>
               <p>
                 I am an adaptable professional and an exceptional team player
@@ -46,8 +45,8 @@ export default class About extends Component {
                 share, and work hard for the success of the group. I believe in
                 fairness, kindness and forgiveness when working with others.
               </p>
-            </Section>
-          </PageWrapper>
+            </section>
+          </div>
         </FadeInUp>
       </Layout>
     )

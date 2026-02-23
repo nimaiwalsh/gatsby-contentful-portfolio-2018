@@ -1,59 +1,20 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from '@emotion/styled'
-import { COLOURS } from '../utils/theme'
 
 const BookListing = ({ book }) => {
   return (
-    <ArticleContainer>
-      <div className="title-container">
-        <div className="title-wrapper">
-          <h3 className="title">
-            <Link to={`/bookreviews/${book.slug}`}>{book.title}</Link>
+    <article>
+      <div>
+        <div className="bg-zinc-900 -skew-x-6 mt-14 mb-7 flex justify-between items-center">
+          <h3 className="skew-x-6 px-2 py-1 m-0 tracking-tight">
+            <Link to={`/bookreviews/${book.slug}`} className="text-primary hover:text-teal-300 no-underline">{book.title}</Link>
           </h3>
-          <span className="date">— {book.createdAt}</span>
+          <span className="pr-8 font-sans text-white text-sm">— {book.createdAt}</span>
         </div>
       </div>
-      <p className="short-description">
-        {book.summary.childMarkdownRemark.excerpt}
-      </p>
-    </ArticleContainer>
+      <p>{book.summary.childMarkdownRemark.excerpt}</p>
+    </article>
   )
 }
 
 export default BookListing
-
-const ArticleContainer = styled('article')`
-  .title-wrapper {
-    background-color: ${COLOURS.black};
-    transform: skewX(-10deg);
-    margin-top: 3.56rem;
-    margin-bottom: 1.78rem;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .title {
-    padding: .4rem;
-    margin: 0;
-    letter-spacing: -0.09rem;
-    transform: skewX(10deg);
-  }
-
-  .title a {
-    /* color: ${COLOURS.secondaryHighlight}; */
-    color: ${COLOURS.primary};
-  }
-
-  .title a:hover {
-    color: ${COLOURS.secondaryHighlight};
-  }
-
-  .date {
-    padding-right: 2rem;
-    font-family: 'Open Sans';
-    color: #FFF;
-  }
-`

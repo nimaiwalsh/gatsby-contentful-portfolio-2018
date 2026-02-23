@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import FadeInUp from '../components/FadeInUp'
-import { PageWrapper, Section } from '../components/styles/StyledComponents'
 import BookListing from '../components/BookListing'
 import Pagination from '../components/Pagination'
 
@@ -12,16 +11,16 @@ const BookReviews = ({ data, pageContext }) => {
   return (
     <Layout>
       <FadeInUp>
-        <PageWrapper>
-          <Section>
+        <div className="w-full">
+          <section className="pb-4 relative">
             <h1>Book reviews</h1>
             {data.allContentfulBookReview.edges.map(({node}) => (
               <BookListing book={node} key={node.id}/>
             ))}
-            
+
             <Pagination pageContext={pageContext}/>
-          </Section>
-        </PageWrapper>
+          </section>
+        </div>
       </FadeInUp>
     </Layout>
   )
@@ -50,6 +49,6 @@ export const query = graphql`
           }
         }
       }
-	  }
+    }
   }
 `

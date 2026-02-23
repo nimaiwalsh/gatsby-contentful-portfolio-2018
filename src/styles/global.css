@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 100%;
+  }
+  body {
+    @apply bg-zinc-50 text-zinc-900;
+  }
+  a {
+    @apply text-primary;
+  }
+  a:hover {
+    @apply no-underline;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

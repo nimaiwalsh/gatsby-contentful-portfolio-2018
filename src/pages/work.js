@@ -3,21 +3,20 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import FadeInUp from '../components/FadeInUp'
-import { PageWrapper, Section } from '../components/styles/StyledComponents'
 import ProjectListing from '../components/ListingProject/ProjectListing'
 
 const Work = ({ data }) => {
   return (
     <Layout>
       <FadeInUp>
-        <PageWrapper>
-          <Section>
+        <div className="w-full">
+          <section className="pb-4 relative">
             <h1>Work</h1>
             {data.contentfulLayout.modules.map(content => {
               return <ProjectListing project={content} key={content.title} />
             })}
-          </Section>
-        </PageWrapper>
+          </section>
+        </div>
       </FadeInUp>
     </Layout>
   )

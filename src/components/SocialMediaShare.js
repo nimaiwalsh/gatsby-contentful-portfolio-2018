@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from '@emotion/styled'
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -9,27 +8,15 @@ import {
 
 const SocialMediaShare = ({ content, link }) => {
   return (
-    <SocialContainer>
-      <TwitterShareButton title={content} url={link}>
+    <div className="flex justify-center gap-4">
+      <TwitterShareButton title={content} url={link} className="outline-none cursor-pointer">
         <TwitterIcon round size={40} />
       </TwitterShareButton>
-      <FacebookShareButton url={link}>
+      <FacebookShareButton url={link} className="outline-none cursor-pointer">
         <FacebookIcon round size={40} />
       </FacebookShareButton>
-    </SocialContainer>
+    </div>
   )
 }
 
 export default SocialMediaShare
-
-const SocialContainer = styled.div`
-  display: flex;
-  justify-content: center;
-
-  & .SocialMediaShareButton {
-    outline: none;
-    cursor: pointer;
-  }
-
-`
-

@@ -1,45 +1,39 @@
-import styled from '@emotion/styled'
-import { Link } from 'gatsby' 
-import { COLOURS } from '../../utils/theme' 
+import React from 'react'
+import { Link } from 'gatsby'
 
-export const PageWrapper = styled.div`
-  width: 100%;
-`
+export const PageWrapper = ({ children, className }) => (
+  <div className={`w-full${className ? ` ${className}` : ''}`}>{children}</div>
+)
 
-export const Section = styled.section`
-  padding-bottom: 1rem;
-  
-  position: relative;
-`
+export const Section = ({ children, className }) => (
+  <section className={`pb-4 relative${className ? ` ${className}` : ''}`}>{children}</section>
+)
 
-export const Button = styled.button`
-  margin-top: 1rem;
-  padding: .5rem;
-  width: ${ props => props.width };
-  border: none;
-  background-color: ${COLOURS.secondary};
-  color: ${COLOURS.white};
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: 0.8rem;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px ${COLOURS.darkGrey};
-  
-  :focus {
-    outline: none;
-  }
+export const Button = ({ children, onClick, type, width }) => (
+  <button
+    type={type || 'button'}
+    onClick={onClick}
+    style={width ? { width } : undefined}
+    className="mt-4 px-4 py-2 bg-primary text-white uppercase font-bold text-sm rounded shadow hover:bg-teal-500 transition-colors cursor-pointer border-none"
+  >
+    {children}
+  </button>
+)
 
-  :hover {
-    background: ${COLOURS.secondaryHighlight};
-  }
-`
+export const ButtonNext = ({ children, to }) => (
+  <Link
+    to={to}
+    className="inline-block px-4 py-2 mr-2 bg-primary text-white font-semibold text-sm rounded hover:bg-teal-500 transition-colors"
+  >
+    {children}
+  </Link>
+)
 
-export const ButtonNext = styled(Link)`
-
-`
-
-export const ButtonPrevious = styled(Link)`
-
-`
+export const ButtonPrevious = ({ children, to }) => (
+  <Link
+    to={to}
+    className="inline-block px-4 py-2 mr-2 bg-primary text-white font-semibold text-sm rounded hover:bg-teal-500 transition-colors"
+  >
+    {children}
+  </Link>
+)

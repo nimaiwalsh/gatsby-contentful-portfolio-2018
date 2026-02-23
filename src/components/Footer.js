@@ -1,78 +1,34 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { css } from '@emotion/react'
-import { CONTAINER, COLOURS } from '../utils/theme'
-
 const Footer = () => {
   return (
-    <footer css={styles}>
-      <div className="container">
-        <div className="details">
-          <p>&copy; 2018 Nimai Walsh</p>
-          <p>
-            <Link to="/">Home</Link>
+    <footer className="py-8 bg-zinc-900 mt-24 text-xs font-sans font-normal">
+      <div className="max-w-container mx-auto px-4">
+        <div className="flex justify-between text-white/80 mb-2">
+          <p className="mb-2">&copy; 2018 Nimai Walsh</p>
+          <p className="mb-2">
+            <Link to="/" className="text-primary hover:border-b-2 hover:border-white">Home</Link>
             &nbsp;/&nbsp;
-            <Link to="/work">Work</Link>
+            <Link to="/work" className="text-primary hover:border-b-2 hover:border-white">Work</Link>
             &nbsp;/&nbsp;
-            <Link to="/blog">Blog</Link>
+            <Link to="/blog" className="text-primary hover:border-b-2 hover:border-white">Blog</Link>
             &nbsp;/&nbsp;
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" className="text-primary hover:border-b-2 hover:border-white">Contact</Link>
           </p>
         </div>
-        <div className="contributions">
-          <p>
-            Site built with <span className="heart">&hearts;</span> by Nimai
-            with <a className="secondary" href="https://www.gatsbyjs.org/plugins/?=bread" target="_blank" rel="noopener noreferrer">Gatsby</a>{' '}
-            and <a className="secondary" href="https://www.contentful.com/" target="_blank" rel="noopener noreferrer">Contentful</a>
+        <div className="text-white/80">
+          <p className="mb-0">
+            Site built with <span className="text-primary">&hearts;</span> by Nimai
+            with{' '}
+            <a className="text-primary hover:border-b-2 hover:border-white" href="https://www.gatsbyjs.org/plugins/?=bread" target="_blank" rel="noopener noreferrer">Gatsby</a>{' '}
+            and{' '}
+            <a className="text-primary hover:border-b-2 hover:border-white" href="https://www.contentful.com/" target="_blank" rel="noopener noreferrer">Contentful</a>
           </p>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
-
-const styles = css`
-  padding: 2rem 0;
-  background-color: #111;
-  display: flex;
-  justify-content: center;
-  font-size: 0.7rem;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  margin-top: 6rem;
-
-  & .container {
-    padding: ${CONTAINER.PADDING};
-    max-width: ${CONTAINER.WIDTH};
-    width: 100%;
-    a {
-      color: ${COLOURS.secondary};
-    }
-    a:hover,
-    a:active {
-      border-bottom: 3px solid ${COLOURS.white};
-    }
-  }
-
-  & .details {
-    display: flex;
-    justify-content: space-between;
-    color: rgba(${COLOURS.whiteRGB}, 0.8);
-    & p {
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  & .contributions {
-    color: rgba(${COLOURS.whiteRGB}, 0.8);
-    & .heart {
-      color: ${COLOURS.secondary};
-    }
-    & p {
-      margin-bottom: 0;
-    }
-  }
-`
+export default Footer
