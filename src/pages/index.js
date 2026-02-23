@@ -29,21 +29,18 @@ const IndexPage = ({ data }) => {
             <div>
               <h1
                 className="text-5xl md:text-6xl lg:text-7xl font-serif tracking-tight leading-tight text-white mt-0"
-                style={{ animation: 'fadein 3s ease both', animationDelay: '1s', opacity: 0 }}
               >
                 Nimai Walsh
               </h1>
               <div className="w-16 h-1 bg-secondary my-6" />
               <p
                 className="text-lg md:text-xl text-white/85 max-w-xl leading-relaxed mb-8"
-                style={{ animation: 'fadein 3s ease both', animationDelay: '1.5s', opacity: 0 }}
               >
                 Welcome to my personal web presence. I am a Web Developer,
                 Traveller and student of life.
               </p>
               <div
                 className="flex gap-4"
-                style={{ animation: 'fadein 3s ease both', animationDelay: '2s', opacity: 0 }}
               >
                 <Link
                   to="/blog"
