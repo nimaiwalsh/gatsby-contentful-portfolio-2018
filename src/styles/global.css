@@ -5,15 +5,38 @@
 @layer base {
   html {
     font-size: 100%;
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-zinc-50 text-zinc-900;
+    line-height: 1.7;
+  }
+  h1 {
+    @apply font-serif text-4xl font-bold mb-4;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  h2 {
+    @apply font-serif text-2xl font-semibold mb-3;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  h3 {
+    @apply font-serif text-xl font-semibold mb-2;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
   }
   a {
     @apply text-secondary;
   }
   a:hover {
-    @apply no-underline;
+    @apply no-underline text-secondary;
+  }
+}
+
+@layer utilities {
+  .eyebrow {
+    @apply text-xs font-semibold tracking-widest uppercase text-secondary;
   }
 }
 
@@ -22,6 +45,17 @@
     opacity: 0;
   }
   100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideup {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
     opacity: 1;
   }
 }

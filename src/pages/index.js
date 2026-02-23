@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/Layout'
@@ -16,30 +16,48 @@ const IndexPage = ({ data }) => {
     <Layout>
       <div className="w-full">
         {/* Hero Section — full-width bleed from constrained container */}
-        <section className="relative w-screen -mx-4 overflow-hidden h-[30rem]">
+        <section className="relative w-screen ml-[calc(50%-50vw)] overflow-hidden h-[44rem]">
           <div className="absolute top-0 left-0 w-full h-full">
             <GatsbyImage
               className="!absolute !top-0 !left-0 !w-full !h-full"
               image={getImage(data.headerImage)}
               alt="hero"
             />
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/90 to-black/80" />
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-zinc-900/85 via-primary/30 to-zinc-900/90" />
           </div>
           <div className="relative z-10 max-w-container mx-auto px-6 h-full flex items-center text-white">
             <div>
               <h1
-                className="font-semibold mt-0 text-secondary-highlight"
+                className="text-5xl md:text-6xl lg:text-7xl font-serif tracking-tight leading-tight text-white mt-0"
                 style={{ animation: 'fadein 3s ease both', animationDelay: '1s', opacity: 0 }}
               >
                 Nimai Walsh
               </h1>
-              <span
-                className="block"
+              <div className="w-16 h-1 bg-secondary my-6" />
+              <p
+                className="text-lg md:text-xl text-white/85 max-w-xl leading-relaxed mb-8"
                 style={{ animation: 'fadein 3s ease both', animationDelay: '1.5s', opacity: 0 }}
               >
                 Welcome to my personal web presence. I am a Web Developer,
                 Traveller and student of life.
-              </span>
+              </p>
+              <div
+                className="flex gap-4"
+                style={{ animation: 'fadein 3s ease both', animationDelay: '2s', opacity: 0 }}
+              >
+                <Link
+                  to="/work"
+                  className="inline-block px-6 py-3 bg-primary text-white font-semibold text-sm tracking-wide rounded-lg no-underline hover:bg-teal-500 transition-colors"
+                >
+                  View Work
+                </Link>
+                <Link
+                  to="/blog"
+                  className="inline-block px-6 py-3 border-2 border-white text-white font-semibold text-sm tracking-wide rounded-lg no-underline hover:bg-white/10 transition-colors"
+                >
+                  Read Blog
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -50,7 +68,8 @@ const IndexPage = ({ data }) => {
               <QuoteListing quotes={data.allContentfulQuotes.edges} />
             </section>
             <section className="pb-4 relative">
-              <h2>Recent books</h2>
+              <p className="eyebrow">Latest Reads</p>
+              <h2 className="mt-1 mb-0">Recent books</h2>
               <CardList>
                 {bookReviews.map(({ node }) => (
                   <Card key={node.id} {...node} bookReview />
@@ -58,7 +77,8 @@ const IndexPage = ({ data }) => {
               </CardList>
             </section>
             <section className="pb-4 relative">
-              <h2>Recent posts</h2>
+              <p className="eyebrow">Latest Posts</p>
+              <h2 className="mt-1 mb-0">Recent posts</h2>
               <CardList>
                 {blogPosts.map(({ node }) => (
                   <Card key={node.id} {...node} blogPost />
