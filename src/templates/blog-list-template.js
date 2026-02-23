@@ -30,7 +30,7 @@ export default Blog
 export const query = graphql`
   query PostList2($skip: Int!, $limit: Int!) {
     allContentfulBlogPost(
-      sort: { fields: [createdAt], order: DESC }
+      sort: { createdAt: DESC }
       limit: $limit,
       skip: $skip,
     ) {

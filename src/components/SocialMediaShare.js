@@ -13,7 +13,7 @@ const SocialMediaShare = ({ content, link }) => {
       <TwitterShareButton title={content} url={link}>
         <TwitterIcon round size={40} />
       </TwitterShareButton>
-      <FacebookShareButton quote={content} url={link}>
+      <FacebookShareButton url={link}>
         <FacebookIcon round size={40} />
       </FacebookShareButton>
     </SocialContainer>

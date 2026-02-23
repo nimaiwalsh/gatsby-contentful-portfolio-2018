@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/Layout'
 import FadeInUp from '../components/FadeInUp'
@@ -23,9 +23,10 @@ const IndexPage = ({ data }) => {
       <PageWrapper>
         <HeroSection>
           <BackgroundImage>
-            <Img
+            <GatsbyImage
               className="header-image"
-              fluid={data.headerImage.childImageSharp.fluid}
+              image={getImage(data.headerImage)}
+              alt="hero"
             />
             <div className="header-image-overlay" />
           </BackgroundImage>
@@ -69,19 +70,25 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage
 
+export const Head = () => (
+  <>
+    <title>Nimai Walsh</title>
+    <meta
+      name="description"
+      content="Discover the personal web space of Nimai Walsh. Nimai is a Web Developer, traveler, writer and student from Brisbane, Australia specialising in HTML, CSS, JavaScript, React and Redux"
+    />
+    <meta
+      name="keywords"
+      content="self improvement, travel, react, redux, html, css, javascript, web, web developer, developer, front-end, gatsby"
+    />
+  </>
+)
+
 export const query = graphql`
   query IndexPageData {
-    site {
-      siteMetadata {
-        title
-        desc
-      }
-    }
     headerImage: file(relativePath: { regex: "/hero-image.jpg/" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
       }
     }
     allContentfulQuotes {
@@ -95,7 +102,7 @@ export const query = graphql`
       }
     }
     allContentfulBookReview(
-      sort: { fields: createdAt, order: DESC }
+      sort: { createdAt: DESC }
       limit: 3
     ) {
       edges {
@@ -113,7 +120,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulBlogPost(sort: { fields: createdAt, order: DESC }, limit: 3) {
+    allContentfulBlogPost(sort: { createdAt: DESC }, limit: 3) {
       edges {
         node {
           id

@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import ProjectContainer from './ProjectListing-styles'
 
 const ProjectListing = ({ project }) => {
@@ -7,7 +7,7 @@ const ProjectListing = ({ project }) => {
     <ProjectContainer>
       <div className="project">
         <div className="project-image">
-          <Img fluid={project.featureImage.fluid} />
+          <GatsbyImage image={getImage(project.featureImage)} alt={project.title} />
         </div>
         <a
           className="project-title"

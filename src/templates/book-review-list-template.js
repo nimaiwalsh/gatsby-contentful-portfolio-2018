@@ -32,7 +32,7 @@ export default BookReviews
 export const query = graphql`
   query BookReviewList($skip: Int!, $limit: Int!) {
     allContentfulBookReview(
-      sort: { fields: [createdAt], order: DESC },
+      sort: { createdAt: DESC },
       limit: $limit
       skip: $skip
     ) {

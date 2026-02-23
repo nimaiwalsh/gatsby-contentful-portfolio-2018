@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { COLOURS, MEDIAQUERY } from '../utils/theme'
 
 //Global style and resets

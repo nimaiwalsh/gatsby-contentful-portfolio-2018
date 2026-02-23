@@ -1,7 +1,7 @@
 // Environment variables
 let env = process.env.NODE_ENV || 'development'
 
-// This adds dotenv (for storing environment variables) to gatsby 
+// This adds dotenv (for storing environment variables) to gatsby
 require('dotenv').config({path: `./.env.${env}`});
 
 // Plugin Configurations
@@ -11,7 +11,7 @@ module.exports = {
     desc: 'Welcome to Nimai Walsh\'s portoflio, blog and general web presence. Nimai is a Web Developer, Traveler and fulltime student of life.',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-image',
     'gatsby-plugin-emotion',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -70,13 +70,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
-        test: /\.js$|\.jsx$/,
-        exclude: /(node_modules|.cache|public)/,
         stages: ['develop'],
-        options: {
-          emitWarning: true,
-          failOnError: false
-        }
+        extensions: ['js', 'jsx'],
+        exclude: ['node_modules', '.cache', 'public'],
+        failOnError: false,
+        emitWarning: true,
       }
     },
     {
@@ -87,6 +85,6 @@ module.exports = {
         // enable the loading spinner.
         showSpinner: true,
       },
-    }, 
+    },
   ],
 };

@@ -39,9 +39,7 @@ export const query = graphql`
         linkToWork
         type
         featureImage {
-          fluid {
-            ...GatsbyContentfulFluid_tracedSVG
-          }
+          gatsbyImageData(width: 800, placeholder: DOMINANT_COLOR)
         }
       }
     }

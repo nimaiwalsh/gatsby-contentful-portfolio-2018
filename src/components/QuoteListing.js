@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import shuffle from 'lodash/shuffle'
 import styled from '@emotion/styled'
-import { keyframes } from '@emotion/core'
+import { keyframes } from '@emotion/react'
 
 import SocialMediaShare from './SocialMediaShare'
 import { Button } from '../components/styles/StyledComponents'

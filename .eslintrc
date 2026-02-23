@@ -1,6 +1,12 @@
 {
-  "parser": "babel-eslint",
-  "plugins": ["react", "emotion"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["babel-preset-gatsby"]
+    }
+  },
+  "plugins": ["react"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended"
@@ -16,8 +22,7 @@
   },
   "rules": {
     "strict": 0,
-    "emotion/no-vanilla": "error",
-    "emotion/styled-import": "error",
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }]
   }
 }

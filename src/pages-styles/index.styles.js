@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { keyframes } from '@emotion/core'
+import { keyframes } from '@emotion/react'
 import { CONTAINER, COLOURS } from '../utils/theme';
 
 export const HeroSection = styled.section`
