@@ -55,7 +55,7 @@ export default class MobileNav extends Component {
             onClick={this.toggleNav}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 list-none text-center w-full m-0"
           >
-            {['work', 'blog', 'contact'].map(page => (
+            {['blog', 'contact'].map(page => (
               <li key={page} className="my-4">
                 <Link
                   to={`/${page}`}

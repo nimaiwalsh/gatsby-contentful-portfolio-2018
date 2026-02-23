@@ -6,9 +6,6 @@ const MainNav = () => {
     <nav>
       <ul className="m-0 list-none flex gap-8 uppercase font-semibold text-sm">
         <li className="m-0">
-          <Link to="/work" className="text-white no-underline pb-0.5 border-b-2 border-transparent hover:border-secondary transition">Work</Link>
-        </li>
-<li className="m-0">
           <Link to="/blog" className="text-white no-underline pb-0.5 border-b-2 border-transparent hover:border-secondary transition">Blog</Link>
         </li>
         <li className="m-0">

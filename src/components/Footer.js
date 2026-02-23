@@ -10,8 +10,6 @@ const Footer = () => {
           <p className="mb-2">
             <Link to="/" className="text-secondary hover:text-secondary-highlight transition-colors">Home</Link>
             &nbsp;/&nbsp;
-            <Link to="/work" className="text-secondary hover:text-secondary-highlight transition-colors">Work</Link>
-            &nbsp;/&nbsp;
             <Link to="/blog" className="text-secondary hover:text-secondary-highlight transition-colors">Blog</Link>
             &nbsp;/&nbsp;
             <Link to="/contact" className="text-secondary hover:text-secondary-highlight transition-colors">Contact</Link>

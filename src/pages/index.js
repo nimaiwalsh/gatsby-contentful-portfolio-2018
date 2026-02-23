@@ -46,12 +46,6 @@ const IndexPage = ({ data }) => {
                 style={{ animation: 'fadein 3s ease both', animationDelay: '2s', opacity: 0 }}
               >
                 <Link
-                  to="/work"
-                  className="inline-block px-6 py-3 bg-primary text-white font-semibold text-sm tracking-wide rounded-lg no-underline hover:bg-teal-500 transition-colors"
-                >
-                  View Work
-                </Link>
-                <Link
                   to="/blog"
                   className="inline-block px-6 py-3 border-2 border-white text-white font-semibold text-sm tracking-wide rounded-lg no-underline hover:bg-white/10 transition-colors"
                 >
