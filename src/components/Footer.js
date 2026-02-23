@@ -8,22 +8,22 @@ const Footer = () => {
         <div className="flex justify-between text-white/80 mb-2">
           <p className="mb-2">&copy; 2018 Nimai Walsh</p>
           <p className="mb-2">
-            <Link to="/" className="text-primary hover:border-b-2 hover:border-white">Home</Link>
+            <Link to="/" className="text-secondary hover:border-b-2 hover:border-white">Home</Link>
             &nbsp;/&nbsp;
-            <Link to="/work" className="text-primary hover:border-b-2 hover:border-white">Work</Link>
+            <Link to="/work" className="text-secondary hover:border-b-2 hover:border-white">Work</Link>
             &nbsp;/&nbsp;
-            <Link to="/blog" className="text-primary hover:border-b-2 hover:border-white">Blog</Link>
+            <Link to="/blog" className="text-secondary hover:border-b-2 hover:border-white">Blog</Link>
             &nbsp;/&nbsp;
-            <Link to="/contact" className="text-primary hover:border-b-2 hover:border-white">Contact</Link>
+            <Link to="/contact" className="text-secondary hover:border-b-2 hover:border-white">Contact</Link>
           </p>
         </div>
         <div className="text-white/80">
           <p className="mb-0">
-            Site built with <span className="text-primary">&hearts;</span> by Nimai
+            Site built with <span className="text-secondary">&hearts;</span> by Nimai
             with{' '}
-            <a className="text-primary hover:border-b-2 hover:border-white" href="https://www.gatsbyjs.org/plugins/?=bread" target="_blank" rel="noopener noreferrer">Gatsby</a>{' '}
+            <a className="text-secondary hover:border-b-2 hover:border-white" href="https://www.gatsbyjs.org/plugins/?=bread" target="_blank" rel="noopener noreferrer">Gatsby</a>{' '}
             and{' '}
-            <a className="text-primary hover:border-b-2 hover:border-white" href="https://www.contentful.com/" target="_blank" rel="noopener noreferrer">Contentful</a>
+            <a className="text-secondary hover:border-b-2 hover:border-white" href="https://www.contentful.com/" target="_blank" rel="noopener noreferrer">Contentful</a>
           </p>
         </div>
       </div>

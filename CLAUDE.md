@@ -51,23 +51,25 @@ Dynamic pages are created in `gatsby-node.js` via `createPages`:
 
 ### Styling System
 
-Styled with **Emotion** (`@emotion/styled`, `@emotion/core`). Global design tokens live in `src/utils/theme.js`:
-- `COLOURS` — brand palette
-- `BREAKPOINTS` / `MEDIAQUERY` — responsive breakpoints (mobile-first with desktop at 1200px, uses `em` units at 1em=20px)
-- `PADDINGS` — spacing scale (XXS–XL)
-- `CONTAINER.WIDTH` — max-width of `1170px`
+Styled with **Tailwind CSS v3** (`gatsby-plugin-postcss`). Design tokens are defined in `tailwind.config.js`:
+- `primary: #4ABDAC` — teal, used for structural accents (header bg circle, outlines)
+- `secondary: #FC4A1A` — orange, used for links, buttons, nav hover underlines
+- `secondary-highlight: #F7B733` — amber, used for hover states and hero heading
+- `maxWidth.container: 1170px` — page max-width
+- `screens` — `sm:600px`, `md:900px`, `lg:1200px`, `xl:1800px`
+- `fontFamily.sans` — Inter; `fontFamily.serif` — Merriweather (loaded via Google Fonts in `gatsby-ssr.js`)
 
-Typography is handled by **Typography.js** using the Sutro theme (`src/utils/typography.js`), which sets the base font size to 20px.
+Global base styles (resets, body bg, default link colour) live in `src/styles/global.css`, which is imported in `Layout.js`.
 
-Page-specific styles live in `src/pages-styles/` (co-located with pages).
+There are no per-page style files — all styles are inline Tailwind `className` props.
 
 ### Component Patterns
 
-- All pages wrap content in `<Layout>` (provides Header, Footer, global styles, Helmet SEO tags)
-- `Layout` uses Gatsby's `StaticQuery` — it is not a page-level component
-- Shared styled primitives (`PageWrapper`, `Section`) live in `src/components/styles/StyledComponents.js`
+- All pages wrap content in `<Layout>` (provides Header, Footer, global CSS)
+- Shared primitives (`PageWrapper`, `Section`, `Button`, `ButtonNext`, `ButtonPrevious`) live in `src/components/styles/StyledComponents.js` as plain React components with Tailwind classes
 - `Card` / `CardList` are the main content listing components; `Card` accepts `bookReview` or `blogPost` boolean props to change rendering
-- `FadeInUp` wraps content for entry animations via `react-motion`
+- `FadeInUp` wraps content for entry animations (inline CSS transitions, no external library)
+- Responsive nav: `hidden md:block` shows `MainNav` on desktop; `md:hidden` shows `MobileNav` on mobile
 
 ### Routing
 

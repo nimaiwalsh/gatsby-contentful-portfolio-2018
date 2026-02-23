@@ -14,7 +14,7 @@ export const Button = ({ children, onClick, type, width }) => (
     type={type || 'button'}
     onClick={onClick}
     style={width ? { width } : undefined}
-    className="mt-4 px-4 py-2 bg-primary text-white uppercase font-bold text-sm rounded shadow hover:bg-teal-500 transition-colors cursor-pointer border-none"
+    className="mt-4 px-4 py-2 bg-secondary text-white uppercase font-bold text-sm rounded shadow hover:bg-secondary-highlight transition-colors cursor-pointer border-none"
   >
     {children}
   </button>

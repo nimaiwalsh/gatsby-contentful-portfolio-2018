@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
           <div className="relative z-10 max-w-container mx-auto px-6 h-full flex items-center text-white">
             <div>
               <h1
-                className="font-semibold mt-0 text-yellow-300"
+                className="font-semibold mt-0 text-secondary-highlight"
                 style={{ animation: 'fadein 3s ease both', animationDelay: '1s', opacity: 0 }}
               >
                 Nimai Walsh

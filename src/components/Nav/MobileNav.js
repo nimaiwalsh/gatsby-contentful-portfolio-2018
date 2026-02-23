@@ -59,7 +59,7 @@ export default class MobileNav extends Component {
               <li key={page} className="my-4">
                 <Link
                   to={`/${page}`}
-                  className="inline-block text-3xl font-light py-4 px-8 text-primary no-underline uppercase transition-all duration-500 hover:text-primary hover:translate-x-4"
+                  className="inline-block text-3xl font-light py-4 px-8 text-secondary-highlight no-underline uppercase transition-all duration-500 hover:text-primary hover:translate-x-4"
                   style={{
                     backgroundImage: 'linear-gradient(120deg, transparent 0%, transparent 50%, white 50%)',
                     backgroundSize: '240%',
