@@ -9,7 +9,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        serif: ['Merriweather', 'serif'],
+        serif: ['Playfair Display', 'serif'],
       },
       maxWidth: {
         container: '1170px',

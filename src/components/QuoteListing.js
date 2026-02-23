@@ -42,10 +42,11 @@ class QuoteListing extends Component {
     return (
       <div className="text-center pt-14">
         <Button onClick={this.nextQuote} width={'auto'}>Inspire me with a new quote</Button>
-        <section className="text-center h-32 my-8">
+        <section className="text-center h-48 my-8">
+          <div className="text-primary text-8xl leading-none" aria-hidden="true">&ldquo;</div>
           <blockquote key={quoteRef} className="relative animate-[fadein_2s_ease]">
-            <p>{quote}</p>
-            <footer>{author}</footer>
+            <p className="font-serif italic text-lg text-zinc-700">{quote}</p>
+            <footer className="text-sm uppercase tracking-widest text-zinc-400">{author}</footer>
           </blockquote>
           <SocialMediaShare
             content={`${quote} - ${author}`}

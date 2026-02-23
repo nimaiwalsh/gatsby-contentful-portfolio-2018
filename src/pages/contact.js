@@ -79,7 +79,7 @@ export default class Contact extends Component {
                     type="text"
                     value={name}
                     onChange={this.handleChange}
-                    className="block w-full mb-4 border-0 border-b border-zinc-300 bg-transparent focus:outline-none focus:border-primary"
+                    className="block w-full mb-4 py-3 text-base border-0 border-b border-zinc-300 bg-transparent focus:outline-none focus:border-primary"
                   />
                   <label>Email</label>
                   <input
@@ -88,7 +88,7 @@ export default class Contact extends Component {
                     type="email"
                     value={email}
                     onChange={this.handleChange}
-                    className="block w-full mb-4 border-0 border-b border-zinc-300 bg-transparent focus:outline-none focus:border-primary"
+                    className="block w-full mb-4 py-3 text-base border-0 border-b border-zinc-300 bg-transparent focus:outline-none focus:border-primary"
                   />
                   <label>Message</label>
                   <textarea
@@ -97,7 +97,7 @@ export default class Contact extends Component {
                     type="text"
                     value={message}
                     onChange={this.handleChange}
-                    className="block w-full mb-4 border-0 border-b border-zinc-300 bg-transparent focus:outline-none focus:border-primary h-48"
+                    className="block w-full mb-4 py-3 text-base border-0 border-b border-zinc-300 bg-transparent focus:outline-none focus:border-primary h-48"
                   />
                   <div className="flex justify-center mt-4">
                     <Recaptcha

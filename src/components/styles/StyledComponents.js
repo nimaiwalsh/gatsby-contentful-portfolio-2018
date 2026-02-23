@@ -14,7 +14,7 @@ export const Button = ({ children, onClick, type, width }) => (
     type={type || 'button'}
     onClick={onClick}
     style={width ? { width } : undefined}
-    className="mt-4 px-4 py-2 bg-secondary text-white uppercase font-bold text-sm rounded shadow hover:bg-secondary-highlight transition-colors cursor-pointer border-none"
+    className="mt-4 px-6 py-3 bg-secondary text-white uppercase font-bold text-sm tracking-wide rounded-lg shadow hover:bg-secondary-highlight transition-colors cursor-pointer border-none"
   >
     {children}
   </button>
@@ -23,7 +23,7 @@ export const Button = ({ children, onClick, type, width }) => (
 export const ButtonNext = ({ children, to }) => (
   <Link
     to={to}
-    className="inline-block px-4 py-2 mr-2 bg-primary text-white font-semibold text-sm rounded hover:bg-teal-500 transition-colors"
+    className="inline-block px-6 py-3 mr-2 bg-primary text-white font-semibold text-sm rounded-lg hover:bg-teal-500 transition-colors"
   >
     {children}
   </Link>
@@ -32,7 +32,7 @@ export const ButtonNext = ({ children, to }) => (
 export const ButtonPrevious = ({ children, to }) => (
   <Link
     to={to}
-    className="inline-block px-4 py-2 mr-2 bg-primary text-white font-semibold text-sm rounded hover:bg-teal-500 transition-colors"
+    className="inline-block px-6 py-3 mr-2 bg-primary text-white font-semibold text-sm rounded-lg hover:bg-teal-500 transition-colors"
   >
     {children}
   </Link>

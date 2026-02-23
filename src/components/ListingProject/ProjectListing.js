@@ -5,7 +5,7 @@ const ProjectListing = ({ project }) => {
   return (
     <div className="mb-16 flex gap-8 items-start">
       <div className="flex-[40%]">
-        <div className="mr-8 mb-8 ml-4 outline outline-[0.5rem] outline-primary outline-offset-[0.5rem]">
+        <div className="mr-8 mb-8 ml-4 ring-2 ring-primary ring-offset-4">
           <GatsbyImage image={getImage(project.featureImage)} alt={project.title} />
         </div>
         <a
@@ -23,12 +23,12 @@ const ProjectListing = ({ project }) => {
         <h4 className="m-0 mb-8">{project.type}</h4>
         <p className="mb-8">{project.description.description}</p>
         <div>
-          <h5 className="m-0 mb-8">Built with</h5>
-          <ul>
+          <h5 className="m-0 mb-4">Built with</h5>
+          <div className="flex flex-wrap gap-2">
             {project.builtWith.map(item => (
-              <li key={item}>{item}</li>
+              <span key={item} className="bg-zinc-100 text-zinc-700 text-xs px-3 py-1 rounded-full">{item}</span>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </div>
